@@ -4,7 +4,8 @@ the same person gave on the survey?
 For each layer: ridge regression from hidden state -> 8 stated_prefs, 5-fold CV by user, Spearman per attribute.
 Targets: absolute ratings and within-person relative priority (rating minus the person's mean).
 Baselines: TF-IDF ridge, sentence-embedding ridge (if sentence-transformers is installed), shuffled-label control.
-Also saves a probe fit on all users at the best layer, used by the minimal-pair test.
+Also saves a probe fit on all users at the best layer, used by the minimal-pair test, and
+per-user out-of-fold predictions (probe_oof.npz, small) so user-level bootstrap needs no hidden states.
 
 python src/probe.py --run runs/qwen7b
 """
@@ -23,13 +24,21 @@ from common import ATTRS
 ALPHAS = np.logspace(-1, 5, 13)
 
 
-def cv_spearman(X, Y, folds):
-    P = np.zeros_like(Y)
+def cv_predict(X, Y, folds):
+    """Out-of-fold ridge predictions (same folds as the user split)."""
+    P = np.zeros_like(Y, dtype=float)
     for f in np.unique(folds):
         tr, te = folds != f, folds == f
         mu, sd = X[tr].mean(0), X[tr].std(0) + 1e-6
         r = RidgeCV(alphas=ALPHAS).fit((X[tr] - mu) / sd, Y[tr])
         P[te] = r.predict((X[te] - mu) / sd)
+    return P
+
+
+def cv_spearman(X, Y, folds, store=None, key=None):
+    P = cv_predict(X, Y, folds)
+    if store is not None:
+        store[key] = P.astype(np.float32)
     return np.array([spearmanr(P[:, j], Y[:, j])[0] for j in range(Y.shape[1])])
 
 
@@ -39,6 +48,7 @@ def main(a):
     targets = {"abs": users[ATTRS].to_numpy(), "rel": users[[f"rel_{x}" for x in ATTRS]].to_numpy()}
     rng = np.random.default_rng(0)
     rows = []
+    oof = {}  # per-user out-of-fold predictions, for user-level bootstrap (user_bootstrap.py)
 
     # --- text baselines
     tfidf = TfidfVectorizer(min_df=3, ngram_range=(1, 2), sublinear_tf=True).fit_transform(users.text).toarray()
@@ -51,7 +61,7 @@ def main(a):
         print("sentence-transformers baseline skipped:", e)
     for name, X in feats.items():
         for t, Y in targets.items():
-            r = cv_spearman(X, Y, folds)
+            r = cv_spearman(X, Y, folds, oof, f"{name}_{t}")
             rows.append({"source": name, "layer": -1, "pool": "-", "target": t, **dict(zip(ATTRS, r)), "mean": r.mean()})
 
     # --- LLM residual stream, every layer
@@ -70,10 +80,13 @@ def main(a):
     H = np.load(os.path.join(a.run, f"H_{best.pool}.npy"), mmap_mode="r")
     Xb = np.asarray(H[:, int(best.layer)], dtype=np.float32)
     for t, Y in targets.items():
+        cv_spearman(Xb, Y, folds, oof, f"llm_{t}")
         r = cv_spearman(Xb, Y[rng.permutation(len(Y))], folds)
         df.loc[len(df)] = {"source": "shuffled_control", "layer": int(best.layer), "pool": best.pool, "target": t,
                            **dict(zip(ATTRS, r)), "mean": r.mean()}
     df.to_csv(os.path.join(a.run, "probe_results.csv"), index=False)
+    np.savez(os.path.join(a.run, "probe_oof.npz"), user_id=users.user_id.to_numpy(),
+             layer=int(best.layer), pool=best.pool, **oof)
 
     # probe fit on all users at the best layer (for the minimal-pair test)
     mu, sd = Xb.mean(0), Xb.std(0) + 1e-6

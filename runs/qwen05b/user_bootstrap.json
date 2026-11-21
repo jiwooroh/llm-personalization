@@ -1,0 +1,125 @@
+{
+ "run": "../runs/qwen05b",
+ "n_users": 1500,
+ "n_boot": 2000,
+ "layer": 12,
+ "pool": "mean",
+ "rho": {
+  "llm_abs": {
+   "rho": 0.1774,
+   "ci": [
+    0.1533,
+    0.2031
+   ]
+  },
+  "sbert_abs": {
+   "rho": 0.1446,
+   "ci": [
+    0.1191,
+    0.1696
+   ]
+  },
+  "tfidf_abs": {
+   "rho": 0.0919,
+   "ci": [
+    0.0688,
+    0.1147
+   ]
+  },
+  "llm_rel": {
+   "rho": 0.1742,
+   "ci": [
+    0.1508,
+    0.1989
+   ]
+  },
+  "sbert_rel": {
+   "rho": 0.1573,
+   "ci": [
+    0.132,
+    0.1815
+   ]
+  },
+  "tfidf_rel": {
+   "rho": 0.1019,
+   "ci": [
+    0.079,
+    0.1231
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "sentence emb.",
+   "delta": 0.0328,
+   "ci": [
+    0.0097,
+    0.0564
+   ],
+   "p": 0.005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "TF-IDF",
+   "delta": 0.0855,
+   "ci": [
+    0.0586,
+    0.1139
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "sentence emb.",
+   "b": "TF-IDF",
+   "delta": 0.0527,
+   "ci": [
+    0.0221,
+    0.0824
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "sentence emb.",
+   "delta": 0.0169,
+   "ci": [
+    -0.0036,
+    0.0373
+   ],
+   "p": 0.107,
+   "sig": false
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "TF-IDF",
+   "delta": 0.0723,
+   "ci": [
+    0.0475,
+    0.0987
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "sentence emb.",
+   "b": "TF-IDF",
+   "delta": 0.0554,
+   "ci": [
+    0.028,
+    0.0823
+   ],
+   "p": 0.0005,
+   "sig": true
+  }
+ ]
+}

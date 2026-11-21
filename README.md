@@ -29,7 +29,8 @@ PRISM Alignment Dataset · Qwen2.5-7B-Instruct (Study 1) · LiteraryTaste (Study
 | 3b 공정 비교 | `src/verbal_calibrated.py` | 말 점수에도 같은 ridge·5-fold 보정 (CPU) |
 | 4 최소쌍 | `src/minimal_pairs.py` | 6단계 강도 사다리 / 실제 문장 + "X matters most" · "X does not matter at all" |
 | 5 그림 | `src/make_figures.py` | 4장 |
-| 6 Bootstrap | `src/bootstrap_ci.py` | 차이의 신뢰구간 (CPU) |
+| 6 Bootstrap | `src/user_bootstrap.py` | 사용자 단위 paired bootstrap. `probe.py`가 저장한 사람별 예측(`probe_oof.npz`)만 씀 (CPU, 1분) |
+| (예전) | `src/bootstrap_ci.py` | 속성 단위 재추출 (hidden state 없을 때의 임시 방법) |
 
 ### 결과 (Qwen2.5-7B-Instruct, 1,500명)
 
@@ -51,7 +52,8 @@ PRISM Alignment Dataset · Qwen2.5-7B-Instruct (Study 1) · LiteraryTaste (Study
 
 - **probe > 말(보정 후)**: Δ=+0.082 (abs), +0.073 (rel). 8개 중 7개 속성에서 probe가 높음 (부호 검정 단측 p=0.035).
   `bootstrap_ci.py`의 CI [0.047, 0.112]는 **속성 8개를 재추출**한 것이라 사용자 단위 검정이 아님.
-  사용자 단위 bootstrap은 hidden state(`H_*.npy`)가 있어야 하므로 다음 GPU 실행 때 함께 돌린다.
+  사용자 단위 검정은 `user_bootstrap.py`로 다음 GPU 실행(`gpu_session.sh`의 B1)에서 돌린다.
+  파이프라인은 Qwen2.5-0.5B로 Mac에서 검증함: probe 0.177 [0.152, 0.201] vs 문장 임베딩 0.145, Δ=+0.033 CI [0.011, 0.057] (abs, 2,000회).
 - **긍정 vs 부정 정답률**: 98.0% vs 79.2%, Δ=+0.188, 95% CI [0.167, 0.208] (문장 1,600개씩 재추출).
 - 문장 임베딩 vs 말(보정 후)은 구분되지 않음 (p=0.23 / 0.66).
 
@@ -125,6 +127,22 @@ PRISM 대화 평점의 response bias 문제를 피하려고, **강제 선택(A/B
 **자연어 선호는 모델 내부에서는 어느 정도 읽히지만(ρ≈0.2), 그 선호가 실제 선택을 예측하는지는 별개의 문제**이고,
 개인화는 말보다 행동 이력에서 더 많은 정보를 얻는다.
 
+## 3b. Study 3 (준비 완료, GPU 대기) — 말한 취향을 모델에 넣으면 내부가 실제 선택을 예측하나
+
+LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 쌍과 함께 모델에 넣고, "이 독자는 어느 글을 고를까?"를 묻는다.
+
+| 조건 | 입력 | 의미 |
+|---|---|---|
+| none | 프로필 없음 ("a typical reader") | 공유 취향 |
+| own | 본인 프로필 | 말한 선호를 선택에 쓰나 |
+| other | 다른 독자 프로필 | 대조군 (핵심 비교: own − other) |
+| own_pos | 본인 프로필에서 "I don't care about…" 문장 제거 | 부정 문장 효과 |
+
+- knows: 마지막 토큰 hidden state의 두 순서(A/B 교체) 차이 → PCA 32 + 로지스틱, Study 2와 같은 쌍 단위 5-fold.
+- says: logit("A") − logit("B")를 두 순서로 상쇄. 학습 없음.
+- 독자 단위 paired bootstrap. 비교 기준: Study 2의 +revealed 이득(+1.8%p).
+- 스크립트: `src/literary/make_profiles.py` → `extract_joint.py` (GPU) → `probe_joint.py` (CPU).
+
 ## 4. 한계
 
 - PRISM `stated_prefs`는 잡음 있는 자기보고라 상한이 낮고, 사람 독자 기준선이 없다.
@@ -133,16 +151,19 @@ PRISM 대화 평점의 response bias 문제를 피하려고, **강제 선택(A/B
 - 모델·프롬프트 각 1개, probe는 선형.
 - LiteraryTaste는 60명 × 100쌍이라 개인 모델 학습량이 작다 (fold당 사람당 ~77개). 설문은 12개 특성 중요도만 사용 (장르·독서 습관 미사용).
 - LiteraryTaste의 글 표현은 작은 모델(MiniLM, Qwen-0.5B)의 평균 풀링이다.
+- Study 3 프로필은 설문 숫자를 템플릿으로 옮긴 문장이지 독자가 직접 쓴 글이 아니다.
 
 ## 5. 레포 구조
 
 ```
 llm-personalization/
-├── README.md · run_all.sh · requirements.txt
+├── README.md · run_all.sh · gpu_session.sh · GPU_GUIDE.md · requirements.txt
 ├── src/
 │   ├── common.py · extract_acts.py · probe.py · verbal_extract.py   Study 1 (GPU)
-│   ├── verbal_calibrated.py · bootstrap_ci.py · minimal_pairs.py · make_figures.py
+│   ├── verbal_calibrated.py · user_bootstrap.py · minimal_pairs.py · make_figures.py
+│   ├── bootstrap_ci.py   (예전) 속성 단위 bootstrap
 │   └── literary/  embed_texts.py · stated_vs_revealed.py           Study 2 (CPU)
+│                  make_profiles.py · extract_joint.py · probe_joint.py   Study 3
 ├── notebooks/03_prism_intent.ipynb
 ├── runs/
 │   ├── qwen7b/          Study 1 결과 (csv·json·figures만 git, *.npy/*.parquet 제외)
@@ -162,12 +183,14 @@ pip install -r requirements.txt
 > macOS에서 레포가 iCloud 동기화 폴더(Desktop/Documents) 안에 있으면 venv를 그 밖에 만든다.
 > 클라우드로 내려간 파일 때문에 `import transformers`가 CPU 0%로 몇 분씩 멈춘다.
 
-**Study 1 (GPU, vast.ai 24GB+ 1장, 1시간 이내)**
+**GPU 한 세션으로 B1(Qwen-7B 재실행 + 사용자 단위 bootstrap) · B2(Llama-3.1-8B) · A(Study 3)**: [GPU_GUIDE.md](GPU_GUIDE.md) 참고, `bash gpu_session.sh`.
+
+**Study 1만 (GPU, vast.ai 24GB+ 1장, 1시간 이내)**
 
 ```bash
 mkdir -p data && curl -L -o data/survey.jsonl https://raw.githubusercontent.com/HannahKirk/prism-alignment/main/data/survey.jsonl
 bash run_all.sh Qwen/Qwen2.5-7B-Instruct runs/qwen7b
-cd src && python verbal_calibrated.py --run ../runs/qwen7b && python bootstrap_ci.py --run ../runs/qwen7b
+# run_all.sh가 verbal_calibrated.py와 user_bootstrap.py까지 돌린다
 ```
 
 **Study 2 (CPU, 약 30분)**
@@ -185,7 +208,9 @@ python stated_vs_revealed.py --emb Qwen2.5-0.5B-Instruct --layer 12 --with_lengt
 
 - 2026-11-20: Qwen2.5-7B로 PRISM 1,500명 실행, 말 점수 보정 비교.
 - 2026-11-21: bootstrap, 사람별 오차 분석, PRISM 대화 평점 연결(비유의), LiteraryTaste stated vs revealed 실험.
-- 다음: 사용자 단위 bootstrap + Llama-3.1-8B 재현 (GPU) → LiteraryTaste 설문을 자연어로 바꿔 LLM 내부 probe (Study 1 방법을 Study 2에 적용) → 선행연구 대비 차별화 한 문장.
+- 2026-11-21 (밤): 사용자 단위 bootstrap 준비 (`probe.py`가 사람별 예측 저장, `user_bootstrap.py`), Qwen-0.5B로 Mac에서 Study 1 전체 검증.
+  Study 3 스크립트 3개 작성, 0.5B·독자 2명으로 테스트. `gpu_session.sh` + `GPU_GUIDE.md`로 GPU 한 세션에 B1·B2·A를 묶음.
+- 다음: vast.ai 세션 1회 (B1 → B2 → A, 약 3–4시간, $1–2) → 결과 받고 Destroy → README 결과 표 갱신 → 선행연구 대비 차별화 한 문장.
 
 ## 참고문헌
 

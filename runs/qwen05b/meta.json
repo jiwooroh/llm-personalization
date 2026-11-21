@@ -1,0 +1,7 @@
+{
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "field": "system_string",
+ "n": 1500,
+ "n_layers": 25,
+ "d": 896
+}
