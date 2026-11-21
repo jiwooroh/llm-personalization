@@ -1,0 +1,123 @@
+{
+ "layer": 10,
+ "pool": "last",
+ "ladder": {
+  "values": {
+   "spearman_level": 0.714,
+   "neg_minus_pos": -2.75
+  },
+  "fluency": {
+   "spearman_level": 0.829,
+   "neg_minus_pos": -5.41
+  },
+  "factuality": {
+   "spearman_level": 0.714,
+   "neg_minus_pos": -4.22
+  },
+  "safety": {
+   "spearman_level": 0.314,
+   "neg_minus_pos": 0.65
+  },
+  "diversity": {
+   "spearman_level": 0.657,
+   "neg_minus_pos": -6.43
+  },
+  "creativity": {
+   "spearman_level": 0.771,
+   "neg_minus_pos": -13.28
+  },
+  "helpfulness": {
+   "spearman_level": 0.771,
+   "neg_minus_pos": -3.91
+  },
+  "personalisation": {
+   "spearman_level": 0.829,
+   "neg_minus_pos": -12.73
+  }
+ },
+ "ladder_mean_spearman": 0.7,
+ "context": {
+  "creativity_down": {
+   "correct": 0.78,
+   "target": -1.3420000076293945,
+   "offtarget": 1.3660000562667847
+  },
+  "creativity_up": {
+   "correct": 0.98,
+   "target": 4.734000205993652,
+   "offtarget": 2.6429998874664307
+  },
+  "diversity_down": {
+   "correct": 0.695,
+   "target": -0.5049999952316284,
+   "offtarget": 1.4769999980926514
+  },
+  "diversity_up": {
+   "correct": 0.955,
+   "target": 1.8609999418258667,
+   "offtarget": 1.7139999866485596
+  },
+  "factuality_down": {
+   "correct": 0.04,
+   "target": 1.809999942779541,
+   "offtarget": 1.9220000505447388
+  },
+  "factuality_up": {
+   "correct": 0.995,
+   "target": 2.9579999446868896,
+   "offtarget": 1.6729999780654907
+  },
+  "fluency_down": {
+   "correct": 0.055,
+   "target": 1.996000051498413,
+   "offtarget": 1.5520000457763672
+  },
+  "fluency_up": {
+   "correct": 0.995,
+   "target": 3.2190001010894775,
+   "offtarget": 2.434999942779541
+  },
+  "helpfulness_down": {
+   "correct": 0.295,
+   "target": 0.5289999842643738,
+   "offtarget": 1.6619999408721924
+  },
+  "helpfulness_up": {
+   "correct": 0.95,
+   "target": 1.4819999933242798,
+   "offtarget": 2.63100004196167
+  },
+  "personalisation_down": {
+   "correct": 0.685,
+   "target": -0.7820000052452087,
+   "offtarget": 1.4620000123977661
+  },
+  "personalisation_up": {
+   "correct": 0.98,
+   "target": 5.173999786376953,
+   "offtarget": 2.441999912261963
+  },
+  "safety_down": {
+   "correct": 0.945,
+   "target": -2.243000030517578,
+   "offtarget": 1.1720000505447388
+  },
+  "safety_up": {
+   "correct": 0.89,
+   "target": 1.9459999799728394,
+   "offtarget": 2.2660000324249268
+  },
+  "values_down": {
+   "correct": 0.495,
+   "target": -0.017999999225139618,
+   "offtarget": 1.565999984741211
+  },
+  "values_up": {
+   "correct": 0.975,
+   "target": 4.156000137329102,
+   "offtarget": 2.1570000648498535
+  }
+ },
+ "context_correct_up": 0.965,
+ "context_correct_down": 0.499
+}

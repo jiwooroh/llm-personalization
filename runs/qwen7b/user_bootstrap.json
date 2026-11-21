@@ -1,0 +1,321 @@
+{
+ "run": "../runs/qwen7b",
+ "n_users": 1500,
+ "n_boot": 2000,
+ "layer": 15,
+ "pool": "last",
+ "rho": {
+  "llm_abs": {
+   "rho": 0.2036,
+   "ci": [
+    0.1788,
+    0.2284
+   ]
+  },
+  "sbert_abs": {
+   "rho": 0.1446,
+   "ci": [
+    0.1191,
+    0.1696
+   ]
+  },
+  "tfidf_abs": {
+   "rho": 0.0919,
+   "ci": [
+    0.0688,
+    0.1147
+   ]
+  },
+  "verbal_raw_abs": {
+   "rho": 0.1032,
+   "ci": [
+    0.0811,
+    0.1259
+   ]
+  },
+  "verbal_cal_abs": {
+   "rho": 0.1216,
+   "ci": [
+    0.0986,
+    0.1447
+   ]
+  },
+  "llm_rel": {
+   "rho": 0.2179,
+   "ci": [
+    0.1935,
+    0.2425
+   ]
+  },
+  "sbert_rel": {
+   "rho": 0.1573,
+   "ci": [
+    0.132,
+    0.1815
+   ]
+  },
+  "tfidf_rel": {
+   "rho": 0.1019,
+   "ci": [
+    0.079,
+    0.1231
+   ]
+  },
+  "verbal_raw_rel": {
+   "rho": 0.123,
+   "ci": [
+    0.0988,
+    0.145
+   ]
+  },
+  "verbal_cal_rel": {
+   "rho": 0.1467,
+   "ci": [
+    0.1205,
+    0.1709
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "sentence emb.",
+   "delta": 0.059,
+   "ci": [
+    0.0367,
+    0.0799
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "TF-IDF",
+   "delta": 0.1117,
+   "ci": [
+    0.0836,
+    0.14
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "verbal raw",
+   "delta": 0.1003,
+   "ci": [
+    0.0723,
+    0.1283
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "LLM probe",
+   "b": "verbal calibrated",
+   "delta": 0.082,
+   "ci": [
+    0.0551,
+    0.1091
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "sentence emb.",
+   "b": "TF-IDF",
+   "delta": 0.0527,
+   "ci": [
+    0.0221,
+    0.0824
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "sentence emb.",
+   "b": "verbal raw",
+   "delta": 0.0413,
+   "ci": [
+    0.0108,
+    0.0714
+   ],
+   "p": 0.008,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "sentence emb.",
+   "b": "verbal calibrated",
+   "delta": 0.023,
+   "ci": [
+    -0.0064,
+    0.0519
+   ],
+   "p": 0.124,
+   "sig": false
+  },
+  {
+   "target": "abs",
+   "a": "TF-IDF",
+   "b": "verbal raw",
+   "delta": -0.0114,
+   "ci": [
+    -0.0428,
+    0.0194
+   ],
+   "p": 0.45,
+   "sig": false
+  },
+  {
+   "target": "abs",
+   "a": "TF-IDF",
+   "b": "verbal calibrated",
+   "delta": -0.0297,
+   "ci": [
+    -0.0587,
+    -0.0007
+   ],
+   "p": 0.045,
+   "sig": true
+  },
+  {
+   "target": "abs",
+   "a": "verbal raw",
+   "b": "verbal calibrated",
+   "delta": -0.0183,
+   "ci": [
+    -0.0361,
+    -0.0012
+   ],
+   "p": 0.031,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "sentence emb.",
+   "delta": 0.0606,
+   "ci": [
+    0.0369,
+    0.0834
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "TF-IDF",
+   "delta": 0.116,
+   "ci": [
+    0.0896,
+    0.1432
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "verbal raw",
+   "delta": 0.0949,
+   "ci": [
+    0.0671,
+    0.122
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "LLM probe",
+   "b": "verbal calibrated",
+   "delta": 0.0712,
+   "ci": [
+    0.0459,
+    0.0973
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "sentence emb.",
+   "b": "TF-IDF",
+   "delta": 0.0554,
+   "ci": [
+    0.028,
+    0.0823
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "sentence emb.",
+   "b": "verbal raw",
+   "delta": 0.0343,
+   "ci": [
+    0.004,
+    0.064
+   ],
+   "p": 0.022,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "sentence emb.",
+   "b": "verbal calibrated",
+   "delta": 0.0107,
+   "ci": [
+    -0.0172,
+    0.0384
+   ],
+   "p": 0.479,
+   "sig": false
+  },
+  {
+   "target": "rel",
+   "a": "TF-IDF",
+   "b": "verbal raw",
+   "delta": -0.0211,
+   "ci": [
+    -0.051,
+    0.0078
+   ],
+   "p": 0.163,
+   "sig": false
+  },
+  {
+   "target": "rel",
+   "a": "TF-IDF",
+   "b": "verbal calibrated",
+   "delta": -0.0448,
+   "ci": [
+    -0.0741,
+    -0.0149
+   ],
+   "p": 0.002,
+   "sig": true
+  },
+  {
+   "target": "rel",
+   "a": "verbal raw",
+   "b": "verbal calibrated",
+   "delta": -0.0237,
+   "ci": [
+    -0.0412,
+    -0.0065
+   ],
+   "p": 0.008,
+   "sig": true
+  }
+ ]
+}

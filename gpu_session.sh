@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
-# One vast.ai GPU session (24GB+ GPU, 80GB disk, ~3h total):
-#   B1  Qwen2.5-7B Study 1 rerun  -> user-level bootstrap (user_bootstrap.json)
-#   B2  Llama-3.1-8B Study 1 replication (checked first; skipped if there is no gated access)
+# Everything that needs a GPU, in one run (24GB+ GPU, 80GB disk, ~3h):
+#   B1  Qwen2.5-7B Study 1 + user-level bootstrap (user_bootstrap.json)
+#   B2  Llama-3.1-8B Study 1 replication (checked first; skipped without gated access / HF_TOKEN)
 #   A   Study 3: stated taste profile x text pair -> do hidden states / A-B logits predict real choices?
-# Before running, copy LiteraryTaste/ from the Mac (it is not in git):
-#   scp -P <port> -r LiteraryTaste root@<host>:~/llm-personalization/
-# Usage on the instance:
-#   git clone https://github.com/jiwooroh/llm-personalization.git && cd llm-personalization
-#   read -s HF_TOKEN && export HF_TOKEN   # only for Llama; paste the token (hidden). See GPU_GUIDE.md
-#   bash gpu_session.sh 2>&1 | tee session.log
-# Then copy results_small.tar.gz to the Mac and DESTROY the instance.
-# Skip parts with SKIP=B1,B2 bash gpu_session.sh
+# Study 3 needs LiteraryTaste/ in the repo root (https://github.com/mj-storytelling/LiteraryTaste).
+# Usage:  PYTHONUNBUFFERED=1 bash gpu_session.sh 2>&1 | tee session.log
+# Skip parts with SKIP=B1,B2 (comma-separated).
+# Note: with a small disk (<80GB) both models do not fit; a disk-full download can leave a corrupt
+# safetensors shard that loads without error but generates garbage. Run models one at a time then.
 set -euo pipefail
 SKIP=${SKIP:-}
 skip() { [[ ",$SKIP," == *",$1,"* ]]; }
@@ -54,4 +51,3 @@ tar czf results_small.tar.gz --exclude='H_*.npy' \
   $(for d in runs/qwen7b runs/llama8b runs/literary_taste/joint_qwen7b; do [ -d "$d" ] && echo "$d"; done) \
   $( [ -f session.log ] && echo session.log )
 ls -lh results_small.tar.gz
-echo "Copy to Mac:  scp -P <port> root@<host>:~/llm-personalization/results_small.tar.gz ."

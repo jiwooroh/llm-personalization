@@ -1,0 +1,101 @@
+{
+ "best_layer": 10,
+ "best_pool": "last",
+ "n_users": 1500,
+ "tfidf_abs": {
+  "layer": -1,
+  "values": 0.103,
+  "fluency": 0.084,
+  "factuality": 0.098,
+  "safety": 0.101,
+  "diversity": 0.059,
+  "creativity": 0.121,
+  "helpfulness": 0.092,
+  "personalisation": 0.077,
+  "mean": 0.092
+ },
+ "tfidf_rel": {
+  "layer": -1,
+  "values": 0.133,
+  "fluency": 0.096,
+  "factuality": 0.138,
+  "safety": 0.066,
+  "diversity": 0.063,
+  "creativity": 0.126,
+  "helpfulness": 0.102,
+  "personalisation": 0.091,
+  "mean": 0.102
+ },
+ "sbert_abs": {
+  "layer": -1,
+  "values": 0.264,
+  "fluency": 0.108,
+  "factuality": 0.134,
+  "safety": 0.131,
+  "diversity": 0.03,
+  "creativity": 0.187,
+  "helpfulness": 0.15,
+  "personalisation": 0.153,
+  "mean": 0.145
+ },
+ "sbert_rel": {
+  "layer": -1,
+  "values": 0.222,
+  "fluency": 0.207,
+  "factuality": 0.245,
+  "safety": 0.089,
+  "diversity": 0.044,
+  "creativity": 0.175,
+  "helpfulness": 0.218,
+  "personalisation": 0.058,
+  "mean": 0.157
+ },
+ "llm_abs": {
+  "layer": 10,
+  "values": 0.275,
+  "fluency": 0.199,
+  "factuality": 0.209,
+  "safety": 0.186,
+  "diversity": 0.109,
+  "creativity": 0.249,
+  "helpfulness": 0.199,
+  "personalisation": 0.242,
+  "mean": 0.208
+ },
+ "llm_rel": {
+  "layer": 14,
+  "values": 0.29,
+  "fluency": 0.276,
+  "factuality": 0.32,
+  "safety": 0.187,
+  "diversity": 0.133,
+  "creativity": 0.211,
+  "helpfulness": 0.279,
+  "personalisation": 0.152,
+  "mean": 0.231
+ },
+ "shuffled_control_abs": {
+  "layer": 10,
+  "values": 0.024,
+  "fluency": -0.068,
+  "factuality": 0.001,
+  "safety": -0.031,
+  "diversity": 0.027,
+  "creativity": -0.009,
+  "helpfulness": -0.075,
+  "personalisation": -0.038,
+  "mean": -0.021
+ },
+ "shuffled_control_rel": {
+  "layer": 10,
+  "values": -0.047,
+  "fluency": 0.002,
+  "factuality": -0.014,
+  "safety": -0.004,
+  "diversity": -0.012,
+  "creativity": -0.004,
+  "helpfulness": 0.037,
+  "personalisation": 0.003,
+  "mean": -0.005
+ }
+}

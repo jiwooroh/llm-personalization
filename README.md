@@ -1,6 +1,6 @@
 # 사람이 말로 밝힌 선호 vs LLM이 내부에서 읽은 선호
 
-PRISM Alignment Dataset · Qwen2.5-7B-Instruct (Study 1) · LiteraryTaste (Study 2) · 2026-11
+PRISM Alignment Dataset · Qwen2.5-7B-Instruct · Llama-3.1-8B-Instruct (Study 1) · LiteraryTaste (Study 2, 3) · 2026-11
 
 ## 1. 연구 개요
 
@@ -16,6 +16,7 @@ PRISM Alignment Dataset · Qwen2.5-7B-Instruct (Study 1) · LiteraryTaste (Study
 |---|---|---|---|
 | 1 | PRISM 설문 1,500명 | `system_string` 자유 서술 (평균 45단어) | 같은 사람의 8개 속성 중요도 0–100 |
 | 2 | LiteraryTaste 60명 | 문학적 특성 12개 중요도 설문 (4단계) | 같은 사람의 A/B 글 선택 100회 (쌍마다 3명) |
+| 3 | LiteraryTaste 60명 | 설문을 옮긴 1인칭 취향 프로필 + 글 쌍을 LLM에 함께 입력 | 같은 사람의 A/B 선택 |
 
 ## 2. Study 1 — PRISM: 내부 표상 vs 말
 
@@ -30,38 +31,44 @@ PRISM Alignment Dataset · Qwen2.5-7B-Instruct (Study 1) · LiteraryTaste (Study
 | 4 최소쌍 | `src/minimal_pairs.py` | 6단계 강도 사다리 / 실제 문장 + "X matters most" · "X does not matter at all" |
 | 5 그림 | `src/make_figures.py` | 4장 |
 | 6 Bootstrap | `src/user_bootstrap.py` | 사용자 단위 paired bootstrap. `probe.py`가 저장한 사람별 예측(`probe_oof.npz`)만 씀 (CPU, 1분) |
-| (예전) | `src/bootstrap_ci.py` | 속성 단위 재추출 (hidden state 없을 때의 임시 방법) |
 
-### 결과 (Qwen2.5-7B-Instruct, 1,500명)
+### 결과 (1,500명, 괄호는 사용자 단위 bootstrap 95% CI)
 
-| 방법 | 절대 점수 ρ | 상대 순위 ρ |
-|---|---|---|
-| 셔플 대조군 | −0.01 | −0.02 |
-| TF-IDF | 0.09 | 0.10 |
-| 말 (원래) | 0.10 | 0.12 |
-| 말 (보정 후) | 0.12 | 0.15 |
-| 문장 임베딩 (mpnet) | 0.15 | 0.16 |
-| **LLM 내부 probe** (마지막 토큰, 15층) | **0.20** | **0.22** |
+| 방법 | Qwen-7B 절대 ρ | Qwen-7B 상대 ρ | Llama-8B 절대 ρ | Llama-8B 상대 ρ |
+|---|---|---|---|---|
+| 셔플 대조군 | −0.01 | −0.02 | −0.02 | −0.01 |
+| TF-IDF | 0.09 | 0.10 | 0.09 | 0.10 |
+| 말 (원래) | 0.10 | 0.12 | 0.11 | 0.10 |
+| 말 (보정 후) | 0.12 | 0.15 | 0.13 | 0.13 |
+| 문장 임베딩 (mpnet) | 0.14 | 0.16 | 0.14 | 0.16 |
+| **LLM 내부 probe** (마지막 토큰) | **0.20** [0.18, 0.23] | **0.22** [0.19, 0.24] | **0.21** [0.18, 0.23] | **0.21** [0.19, 0.23] |
 
-- 최소쌍: 강도 사다리 속성 평균 Spearman 0.87. "matters most" → 올바른 방향 98%, "does not matter at all" → 79%.
-  부정 정답률은 속성마다 크게 다름 (factuality 38%, fluency 60%, 나머지 80–97%).
+probe 레이어는 절대 점수 기준 최적 레이어 (Qwen 15/28층, Llama 10/32층). 상대 순위도 같은 레이어로 평가.
+
+- 최소쌍 (Qwen / Llama): 강도 사다리 속성 평균 Spearman 0.87 / 0.70. "matters most" → 올바른 방향 98% / 97%, "does not matter at all" → 79% / 50%.
+  부정 정답률은 속성마다 크게 다름. Qwen은 factuality 38%, fluency 60%, 나머지 80–97%.
+  Llama는 factuality 4%, fluency 6%, helpfulness 30%로, **모두가 중요하게 여기는 속성의 부정을 거의 못 읽는다**.
 - 사람별 오차: 8개 점수를 고르게 준 사람보다 **속성 간 차이가 큰 사람(뚜렷한 취향)을 더 못 읽음** (사람 내 표준편차 vs 말-보정 오차 ρ=0.28, p<.001).
 - 천장 속성(factuality·helpfulness·fluency)을 빼도 probe ρ는 0.204 → 0.208로 거의 같음. 천장 효과가 낮은 ρ의 주원인은 아님.
 
 ### 유의성 — 어디까지 말할 수 있나
 
-- **probe > 말(보정 후)**: Δ=+0.082 (abs), +0.073 (rel). 8개 중 7개 속성에서 probe가 높음 (부호 검정 단측 p=0.035).
-  `bootstrap_ci.py`의 CI [0.047, 0.112]는 **속성 8개를 재추출**한 것이라 사용자 단위 검정이 아님.
-  사용자 단위 검정은 `user_bootstrap.py`로 다음 GPU 실행(`gpu_session.sh`의 B1)에서 돌린다.
-  파이프라인은 Qwen2.5-0.5B로 Mac에서 검증함: probe 0.177 [0.152, 0.201] vs 문장 임베딩 0.145, Δ=+0.033 CI [0.011, 0.057] (abs, 2,000회).
-- **긍정 vs 부정 정답률**: 98.0% vs 79.2%, Δ=+0.188, 95% CI [0.167, 0.208] (문장 1,600개씩 재추출).
-- 문장 임베딩 vs 말(보정 후)은 구분되지 않음 (p=0.23 / 0.66).
+사용자 1,500명을 재추출하는 paired bootstrap (2,000회, `src/user_bootstrap.py`). probe − 비교 대상의 ρ 차이:
+
+| 비교 | Qwen-7B 절대 | Qwen-7B 상대 | Llama-8B 절대 | Llama-8B 상대 |
+|---|---|---|---|---|
+| probe − 말(보정 후) | **+0.082** [0.055, 0.109] | **+0.071** [0.046, 0.097] | **+0.083** [0.055, 0.111] | **+0.078** [0.051, 0.105] |
+| probe − 문장 임베딩 | **+0.059** [0.037, 0.080] | **+0.061** [0.037, 0.083] | **+0.064** [0.041, 0.085] | **+0.051** [0.029, 0.074] |
+
+- 모두 p<0.001. **"아는 것 > 말하는 것"이 사용자 단위로, 두 모델 계열에서 유의하다.**
+- 문장 임베딩 vs 말(보정 후)은 대체로 구분되지 않음 (Qwen p=0.12 / 0.48, Llama p=0.19 / 0.04).
+- **긍정 vs 부정 정답률** (Qwen): 98.0% vs 79.2%, Δ=+0.188, 95% CI [0.167, 0.208] (문장 1,600개씩 재추출).
 
 ### 해석
 
-1. 내부는 단어 이상을 읽는다. probe > 문장 임베딩 > TF-IDF, 셔플 ≈ 0.
-2. 아는 것 > 말하는 것. 보정해도 차이 ≈0.07–0.08이 남는다. 예외는 diversity 하나.
-3. 부정은 반영되지만 덜 안정적이다. 특히 모두가 중요하다고 여기는 속성(factuality)에서 "중요하지 않다"는 잘 안 읽힌다.
+1. 내부는 단어 이상을 읽는다. probe > 문장 임베딩 > TF-IDF, 셔플 ≈ 0. 두 모델에서 크기가 거의 같다 (ρ≈0.21).
+2. 아는 것 > 말하는 것. 말 점수를 같은 방식으로 보정해도 차이 ≈0.07–0.08이 남고, 사용자 단위 CI가 0에서 멀다.
+3. 부정은 덜 안정적이다. 모두가 중요하다고 여기는 속성(factuality·fluency)의 "중요하지 않다"는 잘 안 읽히고, Llama에서 훨씬 심하다.
 
 ### 확장 분석 (모두 약하거나 비유의, 2026-11-21)
 
@@ -127,9 +134,9 @@ PRISM 대화 평점의 response bias 문제를 피하려고, **강제 선택(A/B
 **자연어 선호는 모델 내부에서는 어느 정도 읽히지만(ρ≈0.2), 그 선호가 실제 선택을 예측하는지는 별개의 문제**이고,
 개인화는 말보다 행동 이력에서 더 많은 정보를 얻는다.
 
-## 3b. Study 3 (준비 완료, GPU 대기) — 말한 취향을 모델에 넣으면 내부가 실제 선택을 예측하나
+## 4. Study 3 — 말한 취향을 모델에 넣으면, 모델이 그 사람의 선택에 쓰나
 
-LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 쌍과 함께 모델에 넣고, "이 독자는 어느 글을 고를까?"를 묻는다.
+LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 쌍과 함께 Qwen2.5-7B-Instruct에 넣고, "이 독자는 어느 글을 고를까?"를 묻는다.
 
 | 조건 | 입력 | 의미 |
 |---|---|---|
@@ -140,39 +147,64 @@ LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 
 
 - knows: 마지막 토큰 hidden state의 두 순서(A/B 교체) 차이 → PCA 32 + 로지스틱, Study 2와 같은 쌍 단위 5-fold.
 - says: logit("A") − logit("B")를 두 순서로 상쇄. 학습 없음.
-- 독자 단위 paired bootstrap. 비교 기준: Study 2의 +revealed 이득(+1.8%p).
+- 독자 단위 paired bootstrap (2,000회). 비교 기준: Study 2의 +revealed 이득(+1.8%p).
 - 스크립트: `src/literary/make_profiles.py` → `extract_joint.py` (GPU) → `probe_joint.py` (CPU).
 
-## 4. 한계
+### 결과 (60명, 선택 5,744개, 정확도)
+
+| 조건 | knows (probe, 12층) | says (A/B 로짓) |
+|---|---|---|
+| none | 0.636 | 0.614 |
+| own | 0.639 | 0.596 |
+| other | 0.635 | 0.593 |
+| own_pos | 0.636 | 0.601 |
+
+| 비교 | knows Δ [95% CI] | says Δ [95% CI] |
+|---|---|---|
+| **own − other** | +0.003 [−0.003, 0.009] | +0.003 [−0.013, 0.017] |
+| own − none | +0.002 [−0.005, 0.010] | **−0.018** [−0.031, −0.007] |
+| other − none | −0.001 [−0.010, 0.007] | **−0.021** [−0.036, −0.006] |
+| own − own_pos | +0.002 [−0.004, 0.008] | −0.005 [−0.013, 0.002] |
+| knows − says | own +0.043, other +0.042, own_pos +0.035, none +0.023 (모두 CI가 0 위) | |
+
+### 해석
+
+1. **본인 프로필과 남의 프로필이 구분되지 않는다** (own ≈ other, knows·says 모두). 모델은 프로필을 읽어도 그 사람의 선택을 맞히는 데 쓰지 않는다.
+   own − other (+0.3%p)는 Study 2의 행동 이력 이득(+1.8%p)보다 훨씬 작다. "말보다 행동"이 LLM 안에서도 유지된다.
+2. **프로필을 넣으면 말(says)은 오히려 나빠진다** (−1.8 ~ −2.1%p, 본인·남 구분 없이). 프로필은 답에 잡음으로 작용한다.
+3. **knows > says가 모든 조건에서 유의하다** (+2–4%p). Study 1의 "아는 것 > 말하는 것"이 선택 예측에서도 나타난다.
+   다만 knows는 공유 취향 수준(0.64, Study 2 population 0.62–0.65)이고, 프로필이 더하는 것은 없다.
+4. "I don't care about…" 문장을 빼도 차이 없음.
+
+## 5. 한계
 
 - PRISM `stated_prefs`는 잡음 있는 자기보고라 상한이 낮고, 사람 독자 기준선이 없다.
 - probe 입력 차원(3,584)이 크다. 768차원 문장 임베딩과의 비교로 일부 반박.
 - 부정/긍정 문장은 부정 여부 외에도 표현이 다르고, 천장 효과로 위·아래 여유가 다르다.
-- 모델·프롬프트 각 1개, probe는 선형.
+- Study 1은 모델 2개(Qwen, Llama), 프롬프트 1개, probe는 선형. Study 3은 Qwen-7B 하나.
 - LiteraryTaste는 60명 × 100쌍이라 개인 모델 학습량이 작다 (fold당 사람당 ~77개). 설문은 12개 특성 중요도만 사용 (장르·독서 습관 미사용).
 - LiteraryTaste의 글 표현은 작은 모델(MiniLM, Qwen-0.5B)의 평균 풀링이다.
 - Study 3 프로필은 설문 숫자를 템플릿으로 옮긴 문장이지 독자가 직접 쓴 글이 아니다.
 
-## 5. 레포 구조
+## 6. 레포 구조
 
 ```
 llm-personalization/
-├── README.md · run_all.sh · gpu_session.sh · GPU_GUIDE.md · requirements.txt
+├── README.md · run_all.sh · gpu_session.sh · requirements.txt
 ├── src/
 │   ├── common.py · extract_acts.py · probe.py · verbal_extract.py   Study 1 (GPU)
 │   ├── verbal_calibrated.py · user_bootstrap.py · minimal_pairs.py · make_figures.py
-│   ├── bootstrap_ci.py   (예전) 속성 단위 bootstrap
 │   └── literary/  embed_texts.py · stated_vs_revealed.py           Study 2 (CPU)
 │                  make_profiles.py · extract_joint.py · probe_joint.py   Study 3
 ├── notebooks/03_prism_intent.ipynb
 ├── runs/
-│   ├── qwen7b/          Study 1 결과 (csv·json·figures만 git, *.npy/*.parquet 제외)
-│   └── literary_taste/  Study 2 결과 (svr_*/summary.json, per_user_accuracy.csv)
-├── data/ · LiteraryTaste/   내려받는 데이터 (git 제외)
-└── archive/             이전 설계안, Kiro 임시 스크립트·mock 데이터 (결과로 쓰지 않음)
+│   ├── qwen7b/ · llama8b/      Study 1 결과 (csv·json·figures만 git, *.npy/*.parquet 제외)
+│   ├── qwen05b/                Study 1 파이프라인 검증 (Mac, Qwen-0.5B)
+│   └── literary_taste/         Study 2 결과 (svr_*/), Study 3 결과 (joint_qwen7b/ 요약만)
+└── data/ · LiteraryTaste/      내려받는 데이터 (git 제외)
 ```
 
-## 6. 실행 방법
+## 7. 실행 방법
 
 ```bash
 git clone <this repo> && cd llm-personalization
@@ -183,9 +215,16 @@ pip install -r requirements.txt
 > macOS에서 레포가 iCloud 동기화 폴더(Desktop/Documents) 안에 있으면 venv를 그 밖에 만든다.
 > 클라우드로 내려간 파일 때문에 `import transformers`가 CPU 0%로 몇 분씩 멈춘다.
 
-**GPU 한 세션으로 B1(Qwen-7B 재실행 + 사용자 단위 bootstrap) · B2(Llama-3.1-8B) · A(Study 3)**: [GPU_GUIDE.md](GPU_GUIDE.md) 참고, `bash gpu_session.sh`.
+**GPU 한 번에 전부 (24GB+ GPU 1장, 디스크 80GB, 약 3시간)**: Study 1 (Qwen-7B, Llama-3.1-8B) + Study 3.
+Llama는 Hugging Face 접근 승인과 토큰(`HF_TOKEN`)이 필요하고, 없으면 건너뛴다. Study 3은 `LiteraryTaste/`가 있어야 한다.
 
-**Study 1만 (GPU, vast.ai 24GB+ 1장, 1시간 이내)**
+```bash
+PYTHONUNBUFFERED=1 bash gpu_session.sh 2>&1 | tee session.log   # 일부만: SKIP=B1,B2,A 중 선택
+```
+
+> 디스크가 모자라면(32GB 등) 모델 가중치가 깨진 채 저장될 수 있다. Llama가 엉뚱한 글을 내면 가중치 checksum부터 확인한다.
+
+**Study 1만 (GPU 24GB+ 1장, 1시간 이내)**
 
 ```bash
 mkdir -p data && curl -L -o data/survey.jsonl https://raw.githubusercontent.com/HannahKirk/prism-alignment/main/data/survey.jsonl
@@ -204,13 +243,15 @@ python stated_vs_revealed.py --emb minilm
 python stated_vs_revealed.py --emb Qwen2.5-0.5B-Instruct --layer 12 --with_length
 ```
 
-## 7. 진행 상황
+## 8. 진행 상황
 
 - 2026-11-20: Qwen2.5-7B로 PRISM 1,500명 실행, 말 점수 보정 비교.
 - 2026-11-21: bootstrap, 사람별 오차 분석, PRISM 대화 평점 연결(비유의), LiteraryTaste stated vs revealed 실험.
 - 2026-11-21 (밤): 사용자 단위 bootstrap 준비 (`probe.py`가 사람별 예측 저장, `user_bootstrap.py`), Qwen-0.5B로 Mac에서 Study 1 전체 검증.
-  Study 3 스크립트 3개 작성, 0.5B·독자 2명으로 테스트. `gpu_session.sh` + `GPU_GUIDE.md`로 GPU 한 세션에 B1·B2·A를 묶음.
-- 다음: vast.ai 세션 1회 (B1 → B2 → A, 약 3–4시간, $1–2) → 결과 받고 Destroy → README 결과 표 갱신 → 선행연구 대비 차별화 한 문장.
+  Study 3 스크립트 3개 작성, 0.5B·독자 2명으로 테스트. `gpu_session.sh`로 GPU 한 세션에 묶음.
+- 2026-11-22: GPU 세션. Qwen-7B 재실행 + 사용자 단위 bootstrap, Llama-3.1-8B 재현, Study 3 전체 실행.
+  "아는 것 > 말하는 것"이 두 모델에서 사용자 단위로 유의. Study 3: 본인 프로필 ≈ 남의 프로필.
+- 다음: 선행연구 대비 차별화 한 문장, Study 3를 독자가 직접 쓴 프로필로 확장할 수 있는지 검토.
 
 ## 참고문헌
 

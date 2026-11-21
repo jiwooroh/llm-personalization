@@ -1,0 +1,24 @@
+{
+ "verbal_calibrated_abs": {
+  "values": 0.122,
+  "fluency": 0.108,
+  "factuality": 0.117,
+  "safety": 0.097,
+  "diversity": 0.123,
+  "creativity": 0.144,
+  "helpfulness": 0.148,
+  "personalisation": 0.147,
+  "mean": 0.126
+ },
+ "verbal_calibrated_rel": {
+  "values": 0.117,
+  "fluency": 0.123,
+  "factuality": 0.178,
+  "safety": 0.088,
+  "diversity": 0.106,
+  "creativity": 0.126,
+  "helpfulness": 0.18,
+  "personalisation": 0.127,
+  "mean": 0.131
+ }
+}

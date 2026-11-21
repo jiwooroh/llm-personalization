@@ -23,3 +23,8 @@ cache/
 *.bin
 *.pt
 *.pth
+
+# Derived from LiteraryTaste data (regenerate with src/literary/make_profiles.py / extract_joint.py)
+runs/literary_taste/profiles.csv
+runs/literary_taste/joint_*/judgments.csv
+runs/literary_taste/joint_*/rows_*.csv

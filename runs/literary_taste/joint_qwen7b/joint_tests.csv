@@ -1,0 +1,13 @@
+what,a,b,delta,ci,p,sig
+knows,own,other,0.0031,"[-0.0028, 0.0093]",0.332,False
+says,own,other,0.0026,"[-0.0131, 0.0167]",0.713,False
+knows,own,none,0.0021,"[-0.0054, 0.0098]",0.601,False
+says,own,none,-0.0181,"[-0.0309, -0.0068]",0.002,True
+knows,other,none,-0.001,"[-0.0095, 0.0073]",0.849,False
+says,other,none,-0.0207,"[-0.0355, -0.0062]",0.004,True
+knows,own,own_pos,0.0021,"[-0.0041, 0.0078]",0.5,False
+says,own,own_pos,-0.0054,"[-0.0133, 0.0018]",0.157,False
+knows-says,none,none,0.0225,"[0.0097, 0.0347]",0.0005,True
+knows-says,own,own,0.0427,"[0.0247, 0.0616]",0.0005,True
+knows-says,other,other,0.0421,"[0.0248, 0.0601]",0.0005,True
+knows-says,own_pos,own_pos,0.0352,"[0.0185, 0.0523]",0.0005,True

@@ -1,0 +1,7 @@
+{
+ "model": "meta-llama/Llama-3.1-8B-Instruct",
+ "field": "system_string",
+ "n": 1500,
+ "n_layers": 33,
+ "d": 4096
+}

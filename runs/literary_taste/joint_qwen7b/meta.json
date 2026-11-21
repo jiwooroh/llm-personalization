@@ -1,0 +1,31 @@
+{
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "layers": [
+  0,
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  28
+ ],
+ "conditions": {
+  "none": {
+   "n_rows": 2000,
+   "seconds": 214
+  },
+  "own": {
+   "n_rows": 5744,
+   "seconds": 780
+  },
+  "other": {
+   "n_rows": 5744,
+   "seconds": 789
+  },
+  "own_pos": {
+   "n_rows": 5744,
+   "seconds": 764
+  }
+ }
+}

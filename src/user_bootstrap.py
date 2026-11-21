@@ -1,4 +1,4 @@
-"""User-level paired bootstrap for Study 1 (replaces the attribute-level fallback in bootstrap_ci.py).
+"""User-level paired bootstrap for Study 1.
 
 Needs only small files: users.parquet, probe_oof.npz (written by probe.py) and, if present, verbal.parquet.
 Each bootstrap draw resamples the 1,500 users with replacement, recomputes every method's Spearman rho

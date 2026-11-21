@@ -1,0 +1,187 @@
+{
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "n_judgments": 5744,
+ "n_users": 60,
+ "ref_layer": 12,
+ "acc_knows_at_ref": {
+  "none": 0.6365,
+  "own": 0.6386,
+  "other": 0.6354,
+  "own_pos": 0.6365
+ },
+ "acc_knows_best": {
+  "none": {
+   "layer": 8,
+   "acc": 0.6422
+  },
+  "own": {
+   "layer": 12,
+   "acc": 0.6386
+  },
+  "other": {
+   "layer": 16,
+   "acc": 0.6389
+  },
+  "own_pos": {
+   "layer": 16,
+   "acc": 0.6372
+  }
+ },
+ "acc_says": {
+  "none": 0.614,
+  "own": 0.5959,
+  "other": 0.5933,
+  "own_pos": 0.6013
+ },
+ "tests": [
+  {
+   "what": "knows",
+   "a": "own",
+   "b": "other",
+   "delta": 0.0031,
+   "ci": [
+    -0.0028,
+    0.0093
+   ],
+   "p": 0.332,
+   "sig": false
+  },
+  {
+   "what": "says",
+   "a": "own",
+   "b": "other",
+   "delta": 0.0026,
+   "ci": [
+    -0.0131,
+    0.0167
+   ],
+   "p": 0.713,
+   "sig": false
+  },
+  {
+   "what": "knows",
+   "a": "own",
+   "b": "none",
+   "delta": 0.0021,
+   "ci": [
+    -0.0054,
+    0.0098
+   ],
+   "p": 0.601,
+   "sig": false
+  },
+  {
+   "what": "says",
+   "a": "own",
+   "b": "none",
+   "delta": -0.0181,
+   "ci": [
+    -0.0309,
+    -0.0068
+   ],
+   "p": 0.002,
+   "sig": true
+  },
+  {
+   "what": "knows",
+   "a": "other",
+   "b": "none",
+   "delta": -0.001,
+   "ci": [
+    -0.0095,
+    0.0073
+   ],
+   "p": 0.849,
+   "sig": false
+  },
+  {
+   "what": "says",
+   "a": "other",
+   "b": "none",
+   "delta": -0.0207,
+   "ci": [
+    -0.0355,
+    -0.0062
+   ],
+   "p": 0.004,
+   "sig": true
+  },
+  {
+   "what": "knows",
+   "a": "own",
+   "b": "own_pos",
+   "delta": 0.0021,
+   "ci": [
+    -0.0041,
+    0.0078
+   ],
+   "p": 0.5,
+   "sig": false
+  },
+  {
+   "what": "says",
+   "a": "own",
+   "b": "own_pos",
+   "delta": -0.0054,
+   "ci": [
+    -0.0133,
+    0.0018
+   ],
+   "p": 0.157,
+   "sig": false
+  },
+  {
+   "what": "knows-says",
+   "a": "none",
+   "b": "none",
+   "delta": 0.0225,
+   "ci": [
+    0.0097,
+    0.0347
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "what": "knows-says",
+   "a": "own",
+   "b": "own",
+   "delta": 0.0427,
+   "ci": [
+    0.0247,
+    0.0616
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "what": "knows-says",
+   "a": "other",
+   "b": "other",
+   "delta": 0.0421,
+   "ci": [
+    0.0248,
+    0.0601
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  {
+   "what": "knows-says",
+   "a": "own_pos",
+   "b": "own_pos",
+   "delta": 0.0352,
+   "ci": [
+    0.0185,
+    0.0523
+   ],
+   "p": 0.0005,
+   "sig": true
+  }
+ ],
+ "study2_reference": {
+  "population": 0.6243,
+  "+revealed": 0.6414,
+  "revealed_gain": 0.0178
+ }
+}
