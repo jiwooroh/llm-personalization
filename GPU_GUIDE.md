@@ -13,8 +13,46 @@
 ## 0. 미리 (Mac에서, 한 번만)
 
 1. Llama를 쓸 거면 https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct 에서 접근 승인을 받는다. 승인까지 몇 시간 걸릴 수 있다.
-2. HF 토큰(read 권한)을 만든다. 토큰은 레포나 파일에 넣지 말고, 인스턴스에서 `export`만 한다.
+2. HF 토큰(read 권한)을 만든다. 자세한 순서는 아래 0b.
 3. 최신 코드가 GitHub에 push돼 있는지 확인한다 (`git log origin/main -1`).
+
+## 0b. Llama-3.1-8B 설정 (B2용, 자세히)
+
+Llama는 gated 모델이라 **라이선스 승인 + 토큰** 두 가지가 필요하다. 승인이 몇 분에서 하루까지 걸리니 GPU를 빌리기 전날 해둔다.
+
+**① 접근 신청 (Mac 브라우저, 직접)**
+1. https://huggingface.co 에 로그인한다 (계정이 없으면 가입하고 이메일 인증까지 끝낸다).
+2. https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct 에서 **"Expand to review and access"**를 누른다.
+3. 이름, 생년월일, 국가, 소속(예: 대학/개인 연구), 직함을 **실제 정보로** 적고 Llama 3.1 Community License에 동의한 뒤 제출한다. 거짓 정보나 약어는 거절되는 경우가 많다.
+4. 상태는 https://huggingface.co/settings/gated-repos 에서 본다. `Accepted`가 되면 끝이고, 승인 메일도 온다. 거절되면 같은 계정으로 다시 신청할 수 없으니 3번을 꼼꼼히 한다.
+
+**② 토큰 만들기**
+1. https://huggingface.co/settings/tokens → **Create new token**
+2. Token type은 **Read**를 고른다. Fine-grained를 쓸 거면 *"Read access to contents of all public gated repos you can access"*를 꼭 체크한다.
+3. 이름은 `vast-llm-pers`처럼 짓고, 만들어진 `hf_...` 값을 복사한다. **레포, 노트, 채팅 어디에도 붙여 넣지 않는다.**
+
+**③ 인스턴스에서 토큰 넣기 (VS Code 터미널, tmux 안)**
+
+입력이 화면과 shell 기록에 남지 않도록 `read -s`로 넣는다. 붙여 넣고 Enter를 누르면 된다 (아무것도 안 보이는 게 정상).
+```bash
+read -s HF_TOKEN && export HF_TOKEN
+```
+접근이 되는지 먼저 확인한다 (몇 초).
+```bash
+python -c "from huggingface_hub import hf_hub_download as d; print(d('meta-llama/Llama-3.1-8B-Instruct','config.json'))"
+```
+- 경로가 출력되면 OK
+- `401` → 토큰이 틀림 (다시 `read -s`)
+- `403` / `GatedRepoError` → 아직 승인 전이거나 Fine-grained 토큰에 gated 권한 체크가 빠짐
+
+`gpu_session.sh`도 맨 앞에서 같은 확인을 한다. 접근이 안 되면 `skipping B2`를 찍고 나머지(B1, A)만 돌린다. 1시간 돌린 뒤에 실패하는 일은 없다.
+
+**④ 참고**
+- 디스크: Llama 가중치는 safetensors만 받아 약 16GB다. Qwen-7B(15GB)와 합쳐도 80GB 디스크로 충분하다.
+- 메모리: bf16 8B ≈ 16GB, 24GB GPU에 들어간다. OOM이 나면 `src/`의 `--batch_size`를 8로 줄인다.
+- 프롬프트 차이: Llama 3.1 chat template은 system 블록(`Cutting Knowledge Date… Today Date: 26 Jul 2024`)을 자동으로 넣는다. Qwen도 자기 기본 system 문장을 넣으므로 두 모델 모두 "기본 템플릿 그대로"인 조건이다. 결과에 적어둔다.
+- Llama만 따로 돌리기: `SKIP=B1,A bash gpu_session.sh`
+- 끝나면 토큰은 인스턴스를 Destroy할 때 같이 사라진다. 불안하면 tokens 페이지에서 토큰을 삭제(revoke)한다.
 
 ## 1. 인스턴스 만들기 (vast.ai 웹)
 
@@ -78,7 +116,7 @@ tmux new -s run
 ```
 
 ```bash
-cd ~/llm-personalization && export HF_TOKEN=hf_...   # Llama 안 쓰면 생략
+cd ~/llm-personalization && read -s HF_TOKEN && export HF_TOKEN   # Llama 안 쓰면 생략, 0b 참고
 ```
 
 ```bash

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # One vast.ai GPU session (24GB+ GPU, 80GB disk, ~3h total):
 #   B1  Qwen2.5-7B Study 1 rerun  -> user-level bootstrap (user_bootstrap.json)
-#   B2  Llama-3.1-8B Study 1 replication (skipped if HF_TOKEN is not set)
+#   B2  Llama-3.1-8B Study 1 replication (checked first; skipped if there is no gated access)
 #   A   Study 3: stated taste profile x text pair -> do hidden states / A-B logits predict real choices?
 # Before running, copy LiteraryTaste/ from the Mac (it is not in git):
 #   scp -P <port> -r LiteraryTaste root@<host>:~/llm-personalization/
 # Usage on the instance:
 #   git clone https://github.com/jiwooroh/llm-personalization.git && cd llm-personalization
-#   export HF_TOKEN=...        # only for Llama (approve the model on huggingface.co first)
+#   read -s HF_TOKEN && export HF_TOKEN   # only for Llama; paste the token (hidden). See GPU_GUIDE.md
 #   bash gpu_session.sh 2>&1 | tee session.log
 # Then copy results_small.tar.gz to the Mac and DESTROY the instance.
 # Skip parts with SKIP=B1,B2 bash gpu_session.sh
@@ -20,14 +20,22 @@ mkdir -p data
 [ -f data/survey.jsonl ] || curl -L -o data/survey.jsonl \
   https://raw.githubusercontent.com/HannahKirk/prism-alignment/main/data/survey.jsonl
 
-skip B1 || bash run_all.sh Qwen/Qwen2.5-7B-Instruct runs/qwen7b
+# Llama preflight: check gated access now, not after B1 has run for an hour.
+# Token comes from HF_TOKEN or from `hf auth login` (~/.cache/huggingface/token).
+LLAMA=meta-llama/Llama-3.1-8B-Instruct
+RUN_LLAMA=0
 if ! skip B2; then
-  if [ -n "${HF_TOKEN:-}" ]; then
-    bash run_all.sh meta-llama/Llama-3.1-8B-Instruct runs/llama8b
+  if python -c "from huggingface_hub import hf_hub_download as d; d('$LLAMA', 'config.json')" 2>/dev/null; then
+    RUN_LLAMA=1
+    echo "Llama access OK -> B2 will run"
   else
-    echo "HF_TOKEN not set -> skipping Llama-3.1-8B"
+    echo "!! No access to $LLAMA (token missing, or license not approved yet) -> skipping B2"
+    echo "   Check: https://huggingface.co/settings/gated-repos"
   fi
 fi
+
+skip B1 || bash run_all.sh Qwen/Qwen2.5-7B-Instruct runs/qwen7b
+if [ "$RUN_LLAMA" = 1 ]; then bash run_all.sh "$LLAMA" runs/llama8b; fi
 
 if ! skip A; then
   if [ -f LiteraryTaste/annotated_instances.csv ]; then
