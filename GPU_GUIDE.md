@@ -24,6 +24,35 @@
 - 신뢰도(Reliability) 높은 호스트, 다운로드 속도 500Mbps 이상이면 모델 받는 시간이 줄어든다.
 - 만든 뒤 **Connect**에서 SSH 명령(`ssh -p <port> root@<host>`)을 복사해 둔다.
 
+## 1b. VS Code로 접속하기 (Remote-SSH)
+
+Remote-SSH 확장과 vast.ai 키(`~/.ssh/id_ed25519_vast`)는 이미 있다.
+
+1. vast.ai **Account → SSH Keys**에 `~/.ssh/id_ed25519_vast.pub` 내용이 등록돼 있는지 확인한다. 없으면 인스턴스를 만들기 **전에** 추가한다.
+   ```bash
+   cat ~/.ssh/id_ed25519_vast.pub | pbcopy
+   ```
+2. `~/.ssh/config`에서 예전 인스턴스 항목(`Host 104.233...`, `Host 47.186...`)을 지우고, 이름이 고정된 항목 하나로 바꾼다. 인스턴스를 새로 만들 때마다 `HostName`과 `Port`만 고치면 된다. 둘 다 vast.ai **Connect** 창의 `ssh -p <port> root@<host>`에 나온다.
+   ```
+   Host vast
+     HostName <host>
+     Port <port>
+     User root
+     IdentityFile ~/.ssh/id_ed25519_vast
+     ServerAliveInterval 30
+   ```
+3. VS Code: `Cmd+Shift+P` → **Remote-SSH: Connect to Host…** → `vast` → 플랫폼은 Linux를 고른다.
+4. 접속되면 **Terminal → New Terminal**을 열고 아래 3단계의 명령을 그대로 입력한다. 폴더는 `/root/llm-personalization`을 연다 (**File → Open Folder**, clone한 다음).
+
+> [!] VS Code 터미널은 창을 닫거나 Mac이 잠들면 같이 끊긴다. **반드시 `tmux` 안에서** `gpu_session.sh`를 돌린다.
+> 다시 접속한 뒤 `tmux attach -t run`으로 붙으면 진행 상황이 그대로 있다.
+
+**VS Code에서 파일 주고받기**
+- 올리기: Mac Finder에서 `LiteraryTaste` 폴더를 VS Code 탐색기의 `llm-personalization/` 위로 끌어다 놓는다. 아래 2단계의 `scp` 대신 써도 된다.
+- 받기: 끝난 뒤 탐색기에서 `results_small.tar.gz` 우클릭 → **Download…** → Mac의 레포 폴더에 저장하고 `tar xzf results_small.tar.gz`.
+
+이 경우 2단계와 4단계는 건너뛰고, 3단계에서 `ssh` 대신 VS Code 터미널을 쓴다. 위의 `Host vast` 항목이 있으면 Mac 터미널 명령도 `ssh vast`, `scp -r LiteraryTaste vast:~/llm-personalization/`처럼 짧아진다.
+
 ## 2. 데이터 올리기 (Mac 터미널)
 
 LiteraryTaste는 git에 없으니 직접 올린다 (19MB).
