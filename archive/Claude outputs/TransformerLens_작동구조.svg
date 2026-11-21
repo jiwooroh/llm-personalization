@@ -1,0 +1,385 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1620 1010" width="1620" height="1010" font-family="Noto Sans CJK KR, sans-serif">
+<defs>
+<marker id="ak" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1f2430"/></marker>
+<marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f6fde"/></marker>
+<marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a9d6f"/></marker>
+<marker id="ap" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/></marker>
+</defs>
+<rect width="1620" height="1010" fill="#ffffff"/>
+<text x="40" y="46" font-size="28" font-weight="800" fill="#1f2430">TransformerLens 작동 구조 한눈에 보기</text>
+<text x="40" y="74" font-size="15" fill="#6b7280">GPT-2 small 안의 정보 흐름(파란 통로) 위에 HookPoint(주황 점)가 있고, 관찰·ablation·patching·steering은 모두 이 점에 hook 함수를 다는 방식으로 작동한다</text>
+<rect x="40" y="183" width="150" height="64" rx="10" fill="#f7f8fa" stroke="#d1d5db"/>
+<text x="115" y="207" text-anchor="middle" font-size="13" fill="#1f2430" font-weight="700">입력 토큰</text>
+<text x="115" y="227" text-anchor="middle" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">"Michael Jordan</text>
+<text x="115" y="241" text-anchor="middle" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">plays the sport of"</text>
+<line x1="190" y1="215" x2="214" y2="215" stroke="#1f2430" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="218" y="189" width="92" height="52" rx="8" fill="#f3f4f6" stroke="#9ca3af"/>
+<text x="264" y="212" text-anchor="middle" font-size="13" font-weight="700">Embed</text><text x="264" y="229" text-anchor="middle" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">W_E + W_pos</text>
+<rect x="318" y="206" width="972" height="18" rx="9" fill="#2f6fde" opacity="0.18"/>
+<line x1="318" y1="215" x2="1296" y2="215" stroke="#2f6fde" stroke-width="3.2" marker-end="url(#ab)"/>
+<text x="322" y="261" font-size="13" fill="#2f6fde" font-weight="700">residual stream  (토큰마다 768차원 벡터 · 각 블록은 읽고 → 결과를 더한다)</text>
+<rect x="348" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="372" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L0</text>
+<path d="M358,207 L358,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M386,157 L386,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="338" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="425" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="449" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L1</text>
+<path d="M435,207 L435,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M463,157 L463,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="415" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="502" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="526" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L2</text>
+<path d="M512,207 L512,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M540,157 L540,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="492" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="579" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="603" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L3</text>
+<path d="M589,207 L589,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M617,157 L617,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="569" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="656" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="680" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L4</text>
+<path d="M666,207 L666,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M694,157 L694,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="646" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="733" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="757" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L5</text>
+<path d="M743,207 L743,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M771,157 L771,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="723" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="810" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="834" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L6</text>
+<path d="M820,207 L820,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M848,157 L848,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="800" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="887" y="117" width="48" height="40" rx="7" fill="#dbe7fb" stroke="#2f6fde" stroke-width="2.4"/>
+<text x="911" y="142" text-anchor="middle" font-size="13" font-weight="800" fill="#1f2430">L7</text>
+<path d="M897,207 L897,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M925,157 L925,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="877" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="964" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="988" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L8</text>
+<path d="M974,207 L974,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M1002,157 L1002,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="954" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="1041" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="1065" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L9</text>
+<path d="M1051,207 L1051,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M1079,157 L1079,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="1031" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="1118" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="1142" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L10</text>
+<path d="M1128,207 L1128,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M1156,157 L1156,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="1108" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<rect x="1195" y="117" width="48" height="40" rx="7" fill="#eef3fd" stroke="#2f6fde" stroke-width="1.2"/>
+<text x="1219" y="142" text-anchor="middle" font-size="13" font-weight="600" fill="#1f2430">L11</text>
+<path d="M1205,207 L1205,160" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<path d="M1233,157 L1233,204" stroke="#1f2430" stroke-width="1.1" marker-end="url(#ak)"/>
+<circle cx="1185" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="324" y="105" font-size="12" fill="#6b7280">블록 12개 = attention + MLP</text>
+<text x="346" y="239" font-size="10.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_resid_pre (블록마다)</text>
+<circle cx="877" cy="185" r="13" fill="#2a9d6f"/><text x="877" y="190" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">4</text>
+<line x1="877" y1="198" x2="877" y2="208" stroke="#2a9d6f" stroke-width="2"/>
+<circle cx="569" cy="185" r="13" fill="#2f6fde"/><text x="569" y="190" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">1</text>
+<line x1="569" y1="198" x2="569" y2="208" stroke="#2f6fde" stroke-width="2"/>
+<rect x="1300" y="189" width="86" height="52" rx="8" fill="#f3f4f6" stroke="#9ca3af"/><text x="1343" y="220" text-anchor="middle" font-size="13" font-weight="700">ln_final</text>
+<circle cx="1296" cy="215" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<line x1="1386" y1="215" x2="1400" y2="215" stroke="#1f2430" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="1404" y="189" width="86" height="52" rx="8" fill="#f3f4f6" stroke="#9ca3af"/><text x="1447" y="212" text-anchor="middle" font-size="13" font-weight="700">Unembed</text><text x="1447" y="229" text-anchor="middle" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">W_U + b_U</text>
+<line x1="1490" y1="215" x2="1502" y2="215" stroke="#1f2430" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="1506" y="183" width="80" height="64" rx="8" fill="#eef3fd" stroke="#2f6fde"/>
+<text x="1546" y="205" text-anchor="middle" font-size="11" fill="#6b7280">다음 토큰</text><text x="1546" y="223" text-anchor="middle" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#2f6fde" font-weight="700">basketball</text><text x="1546" y="239" text-anchor="middle" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#1f2430">0.50</text>
+<path d="M887,157 L618,300" stroke="#9ca3af" stroke-dasharray="4 4" fill="none"/>
+<path d="M935,157 L1090,300" stroke="#9ca3af" stroke-dasharray="4 4" fill="none"/>
+<rect x="318" y="300" width="972" height="245" rx="14" fill="#fbfcfe" stroke="#9ca3af" stroke-dasharray="5 4"/>
+<text x="334" y="324" font-size="14" font-weight="800" fill="#1f2430">블록 L 확대 (예: L7)</text>
+<rect x="348" y="484" width="912" height="16" rx="8" fill="#2f6fde" opacity="0.18"/>
+<line x1="348" y1="492" x2="1266" y2="492" stroke="#2f6fde" stroke-width="3" marker-end="url(#ab)"/>
+<path d="M390,484 C390,432 410,422 430,412" stroke="#1f2430" stroke-width="1.3" fill="none" marker-end="url(#ak)"/>
+<rect x="430" y="342" width="360" height="118" rx="10" fill="#eef3fd" stroke="#2f6fde"/>
+<text x="442" y="362" font-size="13.5" font-weight="800">Attention</text><text x="522" y="362" font-size="12" fill="#6b7280">LN1 → Q·K → 패턴 → V 가중합 → W_O</text>
+<rect x="452" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="479" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="506" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="533" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="560" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="587" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="614" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="641" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="668" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="695" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<rect x="722" y="380" width="20" height="30" rx="4" fill="#2f6fde"/>
+<rect x="749" y="380" width="20" height="30" rx="4" fill="#c9d8f6"/>
+<text x="452" y="426" font-size="11" fill="#6b7280">head 0 … 11 (각 64차원)</text>
+<circle cx="732" cy="376" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="730" y="440" font-size="10.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b" text-anchor="end">hook_pattern · hook_z</text>
+<circle cx="770" cy="362" r="13" fill="#6b7280"/><text x="770" y="367" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">2</text>
+<path d="M760,460 L760,480" stroke="#1f2430" stroke-width="1.3" marker-end="url(#ak)"/>
+<circle cx="760" cy="478" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="748" y="482" text-anchor="end" font-size="10.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_attn_out</text>
+<circle cx="760" cy="492" r="11" fill="#fff" stroke="#1f2430" stroke-width="1.4"/><text x="760" y="497" text-anchor="middle" font-size="16" font-weight="700">+</text>
+<path d="M860,484 C860,432 880,422 900,412" stroke="#1f2430" stroke-width="1.3" fill="none" marker-end="url(#ak)"/>
+<rect x="900" y="342" width="310" height="118" rx="10" fill="#fdf1ea" stroke="#e8743b"/>
+<text x="912" y="362" font-size="13.5" font-weight="800">MLP</text><text x="952" y="362" font-size="12" fill="#6b7280">LN2 → W_in → GELU → W_out</text>
+<text x="912" y="400" font-size="12" fill="#1f2430">768 → 3072 → 768</text>
+<text x="912" y="420" font-size="11" fill="#6b7280">토큰 위치별로 따로 계산 (위치 간 정보 이동 없음)</text>
+<path d="M1180,460 L1180,480" stroke="#1f2430" stroke-width="1.3" marker-end="url(#ak)"/>
+<circle cx="1180" cy="478" r="5.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="1168" y="482" text-anchor="end" font-size="10.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_mlp_out</text>
+<circle cx="1180" cy="492" r="11" fill="#fff" stroke="#1f2430" stroke-width="1.4"/><text x="1180" y="497" text-anchor="middle" font-size="16" font-weight="700">+</text>
+<circle cx="380" cy="492" r="7" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="380" y="520" text-anchor="middle" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_resid_pre</text>
+<circle cx="850" cy="492" r="7" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="850" y="520" text-anchor="middle" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_resid_mid</text>
+<circle cx="1240" cy="492" r="7" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="1240" y="520" text-anchor="middle" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">hook_resid_post</text>
+<circle cx="380" cy="462" r="13" fill="#8b5cf6"/><text x="380" y="467" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">3</text>
+<line x1="380" y1="475" x2="380" y2="484" stroke="#8b5cf6" stroke-width="2"/>
+<rect x="1310" y="300" width="276" height="245" rx="12" fill="#f7f8fa" stroke="#d1d5db"/>
+<text x="1326" y="328" font-size="14" font-weight="800">읽는 법</text>
+<circle cx="1336" cy="356" r="6.5" fill="#fff" stroke="#e8743b" stroke-width="2.6"/>
+<text x="1354" y="361" font-size="12.5">HookPoint (GPT-2 small에 493개)</text>
+<line x1="1324" y1="386" x2="1350" y2="386" stroke="#2f6fde" stroke-width="5" opacity=".5"/>
+<text x="1358" y="391" font-size="12.5">residual stream</text>
+<text x="1326" y="422" font-size="12.5" fill="#1f2430">모든 개입은 같은 형태:</text>
+<rect x="1324" y="432" width="248" height="56" rx="6" fill="#272822"/>
+<text x="1334" y="454" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#a6e22e">def</text><text x="1362" y="454" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">hook_fn(act, hook):</text>
+<text x="1350" y="476" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">return 바꾼_act</text>
+<text x="1326" y="512" font-size="12" fill="#6b7280">원 안 번호 1–4 = 아래 카드의</text>
+<text x="1326" y="530" font-size="12" fill="#6b7280">hook 위치</text>
+<rect x="40" y="575" width="375" height="410" rx="14" fill="#fff" stroke="#2f6fde" stroke-width="1.8"/>
+<rect x="40" y="575" width="375" height="46" rx="14" fill="#2f6fde"/><rect x="40" y="605" width="375" height="16" fill="#2f6fde"/>
+<text x="56" y="605" font-size="17" font-weight="800" fill="#fff">①  관찰 · Logit lens</text>
+<text x="56" y="645" font-size="11.5" fill="#6b7280">어디에</text><text x="102" y="645" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">run_with_cache → 각 레이어 resid_pre</text>
+<text x="56" y="665" font-size="11.5" fill="#6b7280">무엇을</text><text x="102" y="665" font-size="12.5" fill="#1f2430" font-weight="700">읽기만 (값을 그대로 반환)</text>
+<rect x="430" y="575" width="375" height="410" rx="14" fill="#fff" stroke="#6b7280" stroke-width="1.8"/>
+<rect x="430" y="575" width="375" height="46" rx="14" fill="#6b7280"/><rect x="430" y="605" width="375" height="16" fill="#6b7280"/>
+<text x="446" y="605" font-size="17" font-weight="800" fill="#fff">②  Ablation</text>
+<text x="446" y="645" font-size="11.5" fill="#6b7280">어디에</text><text x="492" y="645" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">blocks.L.attn.hook_z</text>
+<text x="446" y="665" font-size="11.5" fill="#6b7280">무엇을</text><text x="492" y="665" font-size="12.5" fill="#1f2430" font-weight="700">특정 head 출력을 0으로</text>
+<rect x="820" y="575" width="375" height="410" rx="14" fill="#fff" stroke="#8b5cf6" stroke-width="1.8"/>
+<rect x="820" y="575" width="375" height="46" rx="14" fill="#8b5cf6"/><rect x="820" y="605" width="375" height="16" fill="#8b5cf6"/>
+<text x="836" y="605" font-size="17" font-weight="800" fill="#fff">③  Activation patching</text>
+<text x="836" y="645" font-size="11.5" fill="#6b7280">어디에</text><text x="882" y="645" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">blocks.L.hook_resid_pre[:, p]</text>
+<text x="836" y="665" font-size="11.5" fill="#6b7280">무엇을</text><text x="882" y="665" font-size="12.5" fill="#1f2430" font-weight="700">clean 실행 값으로 교체</text>
+<rect x="1210" y="575" width="375" height="410" rx="14" fill="#fff" stroke="#2a9d6f" stroke-width="1.8"/>
+<rect x="1210" y="575" width="375" height="46" rx="14" fill="#2a9d6f"/><rect x="1210" y="605" width="375" height="16" fill="#2a9d6f"/>
+<text x="1226" y="605" font-size="17" font-weight="800" fill="#fff">④  Steering (CAA)</text>
+<text x="1226" y="645" font-size="11.5" fill="#6b7280">어디에</text><text x="1272" y="645" font-size="11.5" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">blocks.7.hook_resid_pre</text>
+<text x="1226" y="665" font-size="11.5" fill="#6b7280">무엇을</text><text x="1272" y="665" font-size="12.5" fill="#1f2430" font-weight="700">방향 벡터 α·v를 더함</text>
+<rect x="56" y="683" width="343" height="44" rx="6" fill="#272822"/>
+<text x="66" y="701" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">logits, cache = model.run_with_cache(toks)</text>
+<text x="66" y="718" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">p = (cache_resid[L] → ln_final → W_U+b_U)</text>
+<line x1="80" y1="873" x2="385" y2="873" stroke="#d1d5db"/><line x1="80" y1="753" x2="80" y2="873" stroke="#d1d5db"/>
+<polyline points="80.0,873.0 105.4,873.0 130.8,873.0 156.2,873.0 181.7,873.0 207.1,872.9 232.5,872.1 257.9,870.6 283.3,856.8 308.8,822.0 334.2,759.1 359.6,765.3 385.0,813.0" fill="none" stroke="#2f6fde" stroke-width="2.5"/>
+<circle cx="80.0" cy="873.0" r="3" fill="#2f6fde"/>
+<circle cx="105.4" cy="873.0" r="3" fill="#2f6fde"/>
+<circle cx="130.8" cy="873.0" r="3" fill="#2f6fde"/>
+<circle cx="156.2" cy="873.0" r="3" fill="#2f6fde"/>
+<circle cx="181.7" cy="873.0" r="3" fill="#2f6fde"/>
+<circle cx="207.1" cy="872.9" r="3" fill="#2f6fde"/>
+<circle cx="232.5" cy="872.1" r="3" fill="#2f6fde"/>
+<circle cx="257.9" cy="870.6" r="3" fill="#2f6fde"/>
+<circle cx="283.3" cy="856.8" r="3" fill="#2f6fde"/>
+<circle cx="308.8" cy="822.0" r="3" fill="#2f6fde"/>
+<circle cx="334.2" cy="759.1" r="3" fill="#2f6fde"/>
+<circle cx="359.6" cy="765.3" r="3" fill="#2f6fde"/>
+<circle cx="385.0" cy="813.0" r="3" fill="#2f6fde"/>
+<text x="74" y="758" text-anchor="end" font-size="10" fill="#6b7280">1.0</text><text x="74" y="877" text-anchor="end" font-size="10" fill="#6b7280">0</text>
+<text x="80" y="889" font-size="10" fill="#6b7280">L0</text><text x="385" y="889" font-size="10" fill="#6b7280" text-anchor="end">final</text>
+<text x="88" y="767" font-size="11.5" fill="#2f6fde" font-weight="700">P(" basketball") by layer</text>
+<text x="56" y="945" font-size="12.5" fill="#1f2430">L9에서 처음 1위, L10에서 최고 0.95,</text>
+<text x="56" y="965" font-size="12.5" fill="#1f2430">최종 출력은 0.50 → <tspan font-weight="700">"언제" 답이 생기나</tspan></text>
+<rect x="446" y="683" width="343" height="44" rx="6" fill="#272822"/>
+<text x="456" y="701" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">def ablate(z, hook): z[:, :, h, :] = 0</text>
+<text x="456" y="718" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">model.run_with_hooks(toks, fwd_hooks=[...])</text>
+<rect x="470" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="495" y="749" width="19" height="28" rx="4" fill="#f3f4f6" stroke="#e8743b"/>
+<path d="M498,753 L511,773 M511,753 L498,773" stroke="#e8743b" stroke-width="2"/>
+<rect x="520" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="545" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="570" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="595" y="749" width="19" height="28" rx="4" fill="#f3f4f6" stroke="#e8743b"/>
+<path d="M598,753 L611,773 M611,753 L598,773" stroke="#e8743b" stroke-width="2"/>
+<rect x="620" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="645" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="670" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="695" y="749" width="19" height="28" rx="4" fill="#f3f4f6" stroke="#e8743b"/>
+<path d="M698,753 L711,773 M711,753 L698,773" stroke="#e8743b" stroke-width="2"/>
+<rect x="720" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<rect x="745" y="749" width="19" height="28" rx="4" fill="#c9d8f6" stroke="none"/>
+<text x="470" y="793" font-size="11" fill="#6b7280">× = 출력 0으로 (head 끄기)</text>
+<rect x="490" y="849.4" width="56" height="63.6" rx="4" fill="#d1d5db"/>
+<text x="518" y="844.4" text-anchor="middle" font-size="12" font-weight="700">6.36</text>
+<text x="518" y="929" text-anchor="middle" font-size="11" fill="#6b7280">원래</text>
+<rect x="590" y="847.7" width="56" height="65.3" rx="4" fill="#d1d5db"/>
+<text x="618" y="842.7" text-anchor="middle" font-size="12" font-weight="700">6.53</text>
+<text x="618" y="929" text-anchor="middle" font-size="11" fill="#6b7280">무작위 5개</text>
+<rect x="690" y="826.3" width="56" height="86.7" rx="4" fill="#e8743b"/>
+<text x="718" y="821.3" text-anchor="middle" font-size="12" font-weight="700">8.67</text>
+<text x="718" y="929" text-anchor="middle" font-size="11" fill="#6b7280">induction 5개</text>
+<text x="446" y="945" font-size="12.5" fill="#1f2430">반복 시퀀스 loss: 특정 head를 끄면 급등,</text>
+<text x="446" y="965" font-size="12.5" fill="#1f2430">무작위로 끄면 그대로 → <tspan font-weight="700">"누가" 필요한가</tspan></text>
+<rect x="836" y="683" width="343" height="44" rx="6" fill="#272822"/>
+<text x="846" y="701" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">def patch(r, hook, p):</text>
+<text x="846" y="718" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">    r[:, p] = clean_cache[hook.name][:, p]</text>
+<text x="840" y="745" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#2f6fde">clean    … John gave … to → Mary</text>
+<line x1="840" y1="761" x2="1171" y2="761" stroke="#2f6fde" stroke-width="7" opacity=".25"/>
+<circle cx="856" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="892" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="928" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="964" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="1000" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="1036" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="1072" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="1108" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<circle cx="1144" cy="761" r="5" fill="#fff" stroke="#2f6fde" stroke-width="1.6"/>
+<text x="840" y="845" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#e8743b">corrupt  … Mary gave … to → John</text>
+<line x1="840" y1="821" x2="1171" y2="821" stroke="#e8743b" stroke-width="7" opacity=".25"/>
+<circle cx="856" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="892" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="928" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="964" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="1000" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="1036" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="1072" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="1108" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<circle cx="1144" cy="821" r="5" fill="#fff" stroke="#e8743b" stroke-width="1.6"/>
+<path d="M928,767 C952,788 952,798 928,811" stroke="#8b5cf6" stroke-width="2.4" fill="none" marker-end="url(#ap)"/>
+<text x="964" y="789" font-size="11" fill="#8b5cf6" font-weight="700">한 칸(L, p)만</text><text x="964" y="803" font-size="11" fill="#8b5cf6" font-weight="700">복사</text>
+<text x="840" y="869" font-size="10.5" fill="#6b7280">L0</text><text x="840" y="923" font-size="10.5" fill="#6b7280">L11</text>
+<rect x="890" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="1046" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="863" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="1046" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="868" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="1046" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="873" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="1046" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="878" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="1046" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="883" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.78"/>
+<rect x="1046" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="888" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.60"/>
+<rect x="1046" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="893" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.42"/>
+<rect x="1046" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="898" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="890" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.24"/>
+<rect x="1046" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="903" width="25" height="4.5" fill="#8b5cf6" opacity="0.29"/>
+<rect x="890" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1046" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="908" width="25" height="4.5" fill="#8b5cf6" opacity="0.78"/>
+<rect x="890" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1046" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="913" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<rect x="890" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="916" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="942" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="968" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="994" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1020" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1046" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1072" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.06"/>
+<rect x="1098" y="918" width="25" height="4.5" fill="#8b5cf6" opacity="0.96"/>
+<text x="1032" y="858" text-anchor="middle" font-size="10" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">John</text><text x="1110" y="858" text-anchor="middle" font-size="10" font-family="DejaVu Sans Mono, monospace" fill="#6b7280">to</text>
+<text x="836" y="945" font-size="12.5" fill="#1f2430">초반 레이어는 " John" 위치, 후반은 " to" 위치가</text>
+<text x="836" y="965" font-size="12.5" fill="#1f2430">정답을 되살림 → <tspan font-weight="700">"어디에" 원인이 있나</tspan></text>
+<rect x="1226" y="683" width="343" height="44" rx="6" fill="#272822"/>
+<text x="1236" y="701" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">v = mean(h(긍정 문장) − h(부정 문장))</text>
+<text x="1236" y="718" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#f8f8f2">resid[:, 1:] += α · v   # BOS 제외</text>
+<circle cx="1245" cy="833" r="4.5" fill="#e8743b"/>
+<circle cx="1255" cy="803" r="4.5" fill="#e8743b"/>
+<circle cx="1240" cy="818" r="4.5" fill="#e8743b"/>
+<circle cx="1335" cy="778" r="4.5" fill="#2a9d6f"/>
+<circle cx="1347" cy="793" r="4.5" fill="#2a9d6f"/>
+<circle cx="1330" cy="765" r="4.5" fill="#2a9d6f"/>
+<line x1="1247" y1="818" x2="1333" y2="781" stroke="#2a9d6f" stroke-width="2.6" marker-end="url(#ag)"/>
+<text x="1235" y="863" font-size="11" fill="#6b7280"><tspan fill="#e8743b">●</tspan> 부정 · <tspan fill="#2a9d6f">●</tspan> 긍정 문장</text>
+<text x="1289" y="789" font-size="13" fill="#2a9d6f" font-weight="800">v</text>
+<rect x="1470.0" y="763" width="17.5" height="120" fill="#2a9d6f" opacity=".12"/>
+<line x1="1410" y1="883" x2="1560" y2="883" stroke="#d1d5db"/>
+<polyline points="1410.0,879.5 1435.0,874.0 1447.5,874.8 1460.0,855.3 1472.5,821.0 1485.0,809.6 1497.5,805.1 1510.0,799.6 1535.0,785.7 1560.0,766.3" fill="none" stroke="#2f6fde" stroke-width="2.2"/>
+<polyline points="1410.0,855.9 1435.0,872.7 1447.5,874.7 1460.0,874.7 1472.5,874.1 1485.0,870.5 1497.5,863.8 1510.0,854.6 1535.0,823.6 1560.0,766.4" fill="none" stroke="#e8743b" stroke-width="2.2"/>
+<text x="1410" y="757" font-size="10.5" fill="#2f6fde" font-weight="700">효과</text><text x="1444" y="757" font-size="10.5" fill="#e8743b" font-weight="700">perplexity</text>
+<text x="1485.0" y="898" text-anchor="middle" font-size="10" fill="#6b7280">α (−1 → 2)</text>
+<text x="1226" y="945" font-size="12.5" fill="#1f2430">α 0.25–0.5: 더 긍정적, 품질 거의 유지 /</text>
+<text x="1226" y="965" font-size="12.5" fill="#1f2430">α ≥ 1: 문장 붕괴 → <tspan font-weight="700">"얼마나" 밀 것인가</tspan></text>
+<text x="1580" y="1002" text-anchor="end" font-size="10.5" fill="#9ca3af">수치·곡선: 실제 GPT-2 small 실행 결과 (TransformerLens 4.3.0) · 패칭 히트맵은 실제 결과를 단순화한 모식도</text>
+</svg>

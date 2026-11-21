@@ -1,0 +1,25 @@
+{
+ "parse_rate": 1.0,
+ "abs": {
+  "values": 0.103,
+  "fluency": 0.033,
+  "factuality": 0.132,
+  "safety": 0.078,
+  "diversity": 0.103,
+  "creativity": 0.156,
+  "helpfulness": 0.04,
+  "personalisation": 0.181,
+  "mean": 0.103
+ },
+ "rel": {
+  "values": 0.087,
+  "fluency": 0.06,
+  "factuality": 0.224,
+  "safety": 0.106,
+  "diversity": 0.119,
+  "creativity": 0.141,
+  "helpfulness": 0.09,
+  "personalisation": 0.158,
+  "mean": 0.123
+ }
+}

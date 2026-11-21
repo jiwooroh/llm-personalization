@@ -1,0 +1,200 @@
+{
+ "emb": "minilm",
+ "n_choices": 5744,
+ "n_unsure_dropped": 256,
+ "n_users": 60,
+ "qualities": [
+  "Arouses feelings",
+  "Based on real events",
+  "Challenges the reader",
+  "Entertaining",
+  "Gripping content / plot",
+  "Original style",
+  "Represent facts and reality",
+  "Rich characters",
+  "Fiction's setting precisely presented in detail",
+  "Surprising content / plot",
+  "Thought provoking",
+  "Skillful and rich language"
+ ],
+ "acc": {
+  "position": 0.5063,
+  "length": 0.5935,
+  "population": 0.6243,
+  "+stated": 0.5959,
+  "+stated(shuf)": 0.6003,
+  "+revealed": 0.6414,
+  "+revealed(wrong person)": 0.6132,
+  "crowd": 0.587
+ },
+ "vs_population": {
+  "+stated": {
+   "delta": -0.0287,
+   "ci": [
+    -0.0441,
+    -0.0126
+   ],
+   "p": 0.0008,
+   "users_better": 14,
+   "users_worse": 42
+  },
+  "+stated(shuf)": {
+   "delta": -0.0236,
+   "ci": [
+    -0.0381,
+    -0.009
+   ],
+   "p": 0.0028,
+   "users_better": 16,
+   "users_worse": 38
+  },
+  "+revealed": {
+   "delta": 0.0178,
+   "ci": [
+    -0.0009,
+    0.039
+   ],
+   "p": 0.0644,
+   "users_better": 28,
+   "users_worse": 26
+  },
+  "+revealed(wrong person)": {
+   "delta": -0.0107,
+   "ci": [
+    -0.0248,
+    0.0031
+   ],
+   "p": 0.1244,
+   "users_better": 22,
+   "users_worse": 33
+  },
+  "crowd": {
+   "delta": -0.0373,
+   "ci": [
+    -0.0555,
+    -0.0187
+   ],
+   "p": 0.0,
+   "users_better": 19,
+   "users_worse": 40
+  },
+  "length": {
+   "delta": -0.0302,
+   "ci": [
+    -0.0438,
+    -0.0164
+   ],
+   "p": 0.0,
+   "users_better": 15,
+   "users_worse": 41
+  }
+ },
+ "revealed_vs_stated": {
+  "delta": 0.0464,
+  "ci": [
+   0.0284,
+   0.066
+  ],
+  "p": 0.0,
+  "users_better": 42,
+  "users_worse": 13
+ },
+ "pairwise_agreement": 0.5872,
+ "crowd_agreement_vs_gain_+stated": {
+  "rho": -0.045,
+  "p": 0.7307
+ },
+ "crowd_agreement_vs_gain_+revealed": {
+  "rho": 0.061,
+  "p": 0.6435
+ },
+ "revealed_vs_wrong_person": {
+  "delta": 0.0285,
+  "ci": [
+   0.011,
+   0.0457
+  ],
+  "p": 0.002,
+  "users_better": 36,
+  "users_worse": 19
+ },
+ "length_pref": {
+  "p_choose_longer": 0.5928
+ },
+ "say_do": {
+  "Arouses feelings": {
+   "rho": -0.321,
+   "null_mean": -0.181,
+   "excess": -0.141,
+   "p_perm": 0.856
+  },
+  "Based on real events": {
+   "rho": -0.092,
+   "null_mean": -0.175,
+   "excess": 0.083,
+   "p_perm": 0.264
+  },
+  "Challenges the reader": {
+   "rho": -0.256,
+   "null_mean": -0.168,
+   "excess": -0.089,
+   "p_perm": 0.662
+  },
+  "Entertaining": {
+   "rho": -0.17,
+   "null_mean": -0.169,
+   "excess": -0.001,
+   "p_perm": 0.388
+  },
+  "Gripping content / plot": {
+   "rho": -0.102,
+   "null_mean": -0.165,
+   "excess": 0.063,
+   "p_perm": 0.294
+  },
+  "Original style": {
+   "rho": -0.256,
+   "null_mean": -0.162,
+   "excess": -0.094,
+   "p_perm": 0.741
+  },
+  "Represent facts and reality": {
+   "rho": -0.252,
+   "null_mean": -0.17,
+   "excess": -0.082,
+   "p_perm": 0.662
+  },
+  "Rich characters": {
+   "rho": -0.276,
+   "null_mean": -0.156,
+   "excess": -0.12,
+   "p_perm": 0.781
+  },
+  "Fiction's setting precisely presented in detail": {
+   "rho": -0.239,
+   "null_mean": -0.179,
+   "excess": -0.06,
+   "p_perm": 0.597
+  },
+  "Surprising content / plot": {
+   "rho": 0.25,
+   "null_mean": -0.172,
+   "excess": 0.423,
+   "p_perm": 0.02
+  },
+  "Thought provoking": {
+   "rho": -0.31,
+   "null_mean": -0.199,
+   "excess": -0.112,
+   "p_perm": 0.791
+  },
+  "Skillful and rich language": {
+   "rho": 0.286,
+   "null_mean": -0.167,
+   "excess": 0.453,
+   "p_perm": 0.025
+  }
+ },
+ "say_do_mean_excess": 0.027,
+ "say_do_n_sig": 2
+}

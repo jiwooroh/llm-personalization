@@ -1,0 +1,5 @@
+data/
+results/smoke/
+__pycache__/
+*.npy
+.env

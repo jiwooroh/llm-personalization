@@ -1,0 +1,270 @@
+{
+  "n_boot": 2000,
+  "seed": 0,
+  "probe_vs_verbal": {
+    "method": "scalar_bootstrap_attrs",
+    "abs": {
+      "probe_rho": 0.2035,
+      "verbal_rho": 0.1215,
+      "delta": 0.082,
+      "ci_95": [
+        0.0471,
+        0.1115
+      ],
+      "p_value": 0.0,
+      "sig_95": true,
+      "note": "scalar bootstrap over 8 attributes (H_*.npy absent)"
+    },
+    "rel": {
+      "probe_rho": 0.2196,
+      "verbal_rho": 0.1467,
+      "delta": 0.0729,
+      "ci_95": [
+        0.043,
+        0.1049
+      ],
+      "p_value": 0.0,
+      "sig_95": true,
+      "note": "scalar bootstrap over 8 attributes (H_*.npy absent)"
+    }
+  },
+  "pos_vs_neg": {
+    "pos_accuracy": 0.98,
+    "neg_accuracy": 0.7925,
+    "delta": 0.1875,
+    "ci_95": [
+      0.1669,
+      0.2081
+    ],
+    "p_value": 0.0,
+    "sig_95": true,
+    "per_attribute": {
+      "values": {
+        "pos": 0.94,
+        "neg": 0.835,
+        "delta": 0.105
+      },
+      "fluency": {
+        "pos": 1.0,
+        "neg": 0.595,
+        "delta": 0.405
+      },
+      "factuality": {
+        "pos": 0.995,
+        "neg": 0.375,
+        "delta": 0.62
+      },
+      "safety": {
+        "pos": 0.97,
+        "neg": 0.945,
+        "delta": 0.025
+      },
+      "diversity": {
+        "pos": 0.99,
+        "neg": 0.87,
+        "delta": 0.12
+      },
+      "creativity": {
+        "pos": 0.975,
+        "neg": 0.955,
+        "delta": 0.02
+      },
+      "helpfulness": {
+        "pos": 0.985,
+        "neg": 0.795,
+        "delta": 0.19
+      },
+      "personalisation": {
+        "pos": 0.985,
+        "neg": 0.97,
+        "delta": 0.015
+      }
+    }
+  },
+  "method_pairs": {
+    "abs": {
+      "TF-IDF > sentence emb.": {
+        "delta": -0.0528,
+        "ci_95": [
+          -0.0913,
+          -0.0201
+        ],
+        "p_value": 0.006,
+        "sig_95": false
+      },
+      "TF-IDF > verbal raw": {
+        "delta": -0.0114,
+        "ci_95": [
+          -0.0483,
+          0.0235
+        ],
+        "p_value": 0.546,
+        "sig_95": false
+      },
+      "TF-IDF > verbal calibrated": {
+        "delta": -0.0296,
+        "ci_95": [
+          -0.0559,
+          -0.0064
+        ],
+        "p_value": 0.0165,
+        "sig_95": false
+      },
+      "TF-IDF > LLM probe": {
+        "delta": -0.1116,
+        "ci_95": [
+          -0.1431,
+          -0.0796
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "sentence emb. > verbal raw": {
+        "delta": 0.0414,
+        "ci_95": [
+          -0.0071,
+          0.0893
+        ],
+        "p_value": 0.092,
+        "sig_95": false
+      },
+      "sentence emb. > verbal calibrated": {
+        "delta": 0.0231,
+        "ci_95": [
+          -0.0143,
+          0.0598
+        ],
+        "p_value": 0.2345,
+        "sig_95": false
+      },
+      "sentence emb. > LLM probe": {
+        "delta": -0.0589,
+        "ci_95": [
+          -0.0774,
+          -0.039
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "verbal raw > verbal calibrated": {
+        "delta": -0.0183,
+        "ci_95": [
+          -0.0395,
+          0.0037
+        ],
+        "p_value": 0.106,
+        "sig_95": false
+      },
+      "verbal raw > LLM probe": {
+        "delta": -0.1003,
+        "ci_95": [
+          -0.1378,
+          -0.0557
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "verbal calibrated > LLM probe": {
+        "delta": -0.082,
+        "ci_95": [
+          -0.1118,
+          -0.0475
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      }
+    },
+    "rel": {
+      "TF-IDF > sentence emb.": {
+        "delta": -0.0554,
+        "ci_95": [
+          -0.0925,
+          -0.015
+        ],
+        "p_value": 0.004,
+        "sig_95": false
+      },
+      "TF-IDF > verbal raw": {
+        "delta": -0.0212,
+        "ci_95": [
+          -0.0533,
+          0.0103
+        ],
+        "p_value": 0.204,
+        "sig_95": false
+      },
+      "TF-IDF > verbal calibrated": {
+        "delta": -0.0449,
+        "ci_95": [
+          -0.0681,
+          -0.0191
+        ],
+        "p_value": 0.0015,
+        "sig_95": false
+      },
+      "TF-IDF > LLM probe": {
+        "delta": -0.1177,
+        "ci_95": [
+          -0.139,
+          -0.0927
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "sentence emb. > verbal raw": {
+        "delta": 0.0341,
+        "ci_95": [
+          -0.0276,
+          0.0958
+        ],
+        "p_value": 0.283,
+        "sig_95": false
+      },
+      "sentence emb. > verbal calibrated": {
+        "delta": 0.0105,
+        "ci_95": [
+          -0.036,
+          0.0608
+        ],
+        "p_value": 0.664,
+        "sig_95": false
+      },
+      "sentence emb. > LLM probe": {
+        "delta": -0.0624,
+        "ci_95": [
+          -0.086,
+          -0.0414
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "verbal raw > verbal calibrated": {
+        "delta": -0.0236,
+        "ci_95": [
+          -0.0529,
+          0.0018
+        ],
+        "p_value": 0.0985,
+        "sig_95": false
+      },
+      "verbal raw > LLM probe": {
+        "delta": -0.0965,
+        "ci_95": [
+          -0.1413,
+          -0.0536
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      },
+      "verbal calibrated > LLM probe": {
+        "delta": -0.0729,
+        "ci_95": [
+          -0.1063,
+          -0.0447
+        ],
+        "p_value": 0.0,
+        "sig_95": false
+      }
+    }
+  }
+}

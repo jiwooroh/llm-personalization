@@ -1,0 +1,10 @@
+torch>=2.4
+transformers>=4.45
+accelerate
+pandas
+pyarrow
+numpy
+scikit-learn
+scipy
+tqdm
+matplotlib

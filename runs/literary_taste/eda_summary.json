@@ -1,0 +1,36 @@
+{
+  "users": 60,
+  "instances": 6300,
+  "preference_tasks": 2000,
+  "task_types": {
+    "human_vs_human": 1400,
+    "human_vs_llm_samecontent": 400,
+    "human_vs_llm_diffcontent": 200
+  },
+  "text_sources": {
+    "writingprompt": 1036,
+    "gutenberg": 1004,
+    "sterman": 961,
+    "poetry": 283,
+    "llm_writingprompt": 194,
+    "llm_gutenberg": 180,
+    "llm_sterman": 146,
+    "tell-me-a-story": 116,
+    "llm_poetry": 59,
+    "llm_tell-me-a-story": 21
+  },
+  "top_genres": {
+    "Contemporary / general fiction": 36,
+    "Social & Cultural": 33,
+    "Crime / mystery / thriller": 31,
+    "History": 30,
+    "Historical": 29,
+    "Science fiction / fantasy": 29,
+    "Personal Development": 29,
+    "Classics": 28,
+    "Science & Nature": 28,
+    "Autobiography / biography / memoir": 27
+  },
+  "avg_text1_length": 697.752,
+  "avg_text2_length": 689.419
+}

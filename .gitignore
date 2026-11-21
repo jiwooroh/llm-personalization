@@ -1,0 +1,25 @@
+# Python / env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Downloaded data (fetch with the commands in README)
+data/
+LiteraryTaste/
+
+# Large run artifacts (small csv/json summaries and figures are kept)
+*.npy
+*.npz
+*.parquet
+*.log
+runs/**/H_*.npy
+
+# Model caches / checkpoints
+cache/
+*.safetensors
+*.bin
+*.pt
+*.pth

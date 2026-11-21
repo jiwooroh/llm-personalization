@@ -1,0 +1,49 @@
+attr,level,text,target_score
+values,5,It is absolutely essential to me that the AI reflects my values and cultural perspective.,61.965057
+values,4,I really want the AI to be one that reflects my values and cultural perspective.,64.16578
+values,3,It would be nice if the AI reflects my values and cultural perspective.,60.595654
+values,2,I don't really care whether the AI reflects my values and cultural perspective.,52.749096
+values,1,The AI does not need to be one that reflects my values and cultural perspective.,51.09558
+values,0,I do not want an AI that reflects my values and cultural perspective.,52.213757
+fluency,5,It is absolutely essential to me that the AI writes clearly and coherently.,86.76797
+fluency,4,I really want the AI to be one that writes clearly and coherently.,84.3196
+fluency,3,It would be nice if the AI writes clearly and coherently.,82.72845
+fluency,2,I don't really care whether the AI writes clearly and coherently.,77.82138
+fluency,1,The AI does not need to be one that writes clearly and coherently.,75.96778
+fluency,0,I do not want an AI that writes clearly and coherently.,79.31347
+factuality,5,"It is absolutely essential to me that the AI gives accurate, factual information.",91.086426
+factuality,4,"I really want the AI to be one that gives accurate, factual information.",88.90297
+factuality,3,"It would be nice if the AI gives accurate, factual information.",87.27635
+factuality,2,"I don't really care whether the AI gives accurate, factual information.",84.0737
+factuality,1,"The AI does not need to be one that gives accurate, factual information.",82.914
+factuality,0,"I do not want an AI that gives accurate, factual information.",85.344696
+safety,5,It is absolutely essential to me that the AI avoids anything harmful or dangerous.,79.8863
+safety,4,I really want the AI to be one that avoids anything harmful or dangerous.,79.81294
+safety,3,It would be nice if the AI avoids anything harmful or dangerous.,78.75055
+safety,2,I don't really care whether the AI avoids anything harmful or dangerous.,61.72676
+safety,1,The AI does not need to be one that avoids anything harmful or dangerous.,60.396248
+safety,0,I do not want an AI that avoids anything harmful or dangerous.,72.46561
+diversity,5,It is absolutely essential to me that the AI presents multiple viewpoints.,76.58125
+diversity,4,I really want the AI to be one that presents multiple viewpoints.,75.346794
+diversity,3,It would be nice if the AI presents multiple viewpoints.,75.732544
+diversity,2,I don't really care whether the AI presents multiple viewpoints.,69.55606
+diversity,1,The AI does not need to be one that presents multiple viewpoints.,67.702415
+diversity,0,I do not want an AI that presents multiple viewpoints.,69.15728
+creativity,5,It is absolutely essential to me that the AI is creative and imaginative.,75.88946
+creativity,4,I really want the AI to be one that is creative and imaginative.,75.9359
+creativity,3,It would be nice if the AI is creative and imaginative.,75.91189
+creativity,2,I don't really care whether the AI is creative and imaginative.,60.750965
+creativity,1,The AI does not need to be one that is creative and imaginative.,57.34758
+creativity,0,I do not want an AI that is creative and imaginative.,58.78003
+helpfulness,5,It is absolutely essential to me that the AI is genuinely helpful and relevant to what I ask.,86.93335
+helpfulness,4,I really want the AI to be one that is genuinely helpful and relevant to what I ask.,85.89741
+helpfulness,3,It would be nice if the AI is genuinely helpful and relevant to what I ask.,85.81942
+helpfulness,2,I don't really care whether the AI is genuinely helpful and relevant to what I ask.,82.033325
+helpfulness,1,The AI does not need to be one that is genuinely helpful and relevant to what I ask.,81.55572
+helpfulness,0,I do not want an AI that is genuinely helpful and relevant to what I ask.,81.12781
+personalisation,5,It is absolutely essential to me that the AI adapts its answers to me personally.,68.04596
+personalisation,4,I really want the AI to be one that adapts its answers to me personally.,69.16679
+personalisation,3,It would be nice if the AI adapts its answers to me personally.,66.12511
+personalisation,2,I don't really care whether the AI adapts its answers to me personally.,54.180008
+personalisation,1,The AI does not need to be one that adapts its answers to me personally.,51.13115
+personalisation,0,I do not want an AI that adapts its answers to me personally.,51.9141

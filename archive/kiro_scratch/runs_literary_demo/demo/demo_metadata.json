@@ -1,0 +1,43 @@
+{
+  "model_name": "gpt2",
+  "n_samples": 5,
+  "n_layers": 13,
+  "d_model": 768,
+  "samples": [
+    {
+      "id": 0,
+      "type": "human_vs_human",
+      "sources": "gutenberg vs gutenberg",
+      "n_tokens": 56,
+      "label": null
+    },
+    {
+      "id": 1,
+      "type": "human_vs_llm_samecontent",
+      "sources": "llm_poetry vs poetry",
+      "n_tokens": 56,
+      "label": null
+    },
+    {
+      "id": 2,
+      "type": "human_vs_human",
+      "sources": "gutenberg vs poetry",
+      "n_tokens": 72,
+      "label": null
+    },
+    {
+      "id": 3,
+      "type": "human_vs_human",
+      "sources": "poetry vs gutenberg",
+      "n_tokens": 57,
+      "label": null
+    },
+    {
+      "id": 4,
+      "type": "human_vs_llm_diffcontent",
+      "sources": "gutenberg vs llm_poetry",
+      "n_tokens": 57,
+      "label": null
+    }
+  ]
+}
