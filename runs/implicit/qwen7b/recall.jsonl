@@ -1,0 +1,800 @@
+{"item": 1, "preference": "Is passionate about surfing when traveling to coastal areas", "recall": ""}
+{"item": 5, "preference": "Watches anime series regularly", "recall": ""}
+{"item": 8, "preference": "Has a home garden for vegetables and herbs", "recall": ""}
+{"item": 10, "preference": "Collects rare vintage vinyl from international artists", "recall": ""}
+{"item": 11, "preference": "Keeps up with emerging cryptocurrency markets", "recall": ""}
+{"item": 12, "preference": "Likes watching classic movies from the 1940s and 50s", "recall": ""}
+{"item": 21, "preference": "Enjoys museum visits", "recall": ""}
+{"item": 22, "preference": "Baking bread at home", "recall": ""}
+{"item": 23, "preference": "Listening to live acoustic performances", "recall": ""}
+{"item": 24, "preference": "Practicing meditation for relaxation over religious services", "recall": ""}
+{"item": 26, "preference": "Enjoying traditional Nigerian dishes such as jollof rice and egusi soup", "recall": ""}
+{"item": 32, "preference": "Volunteering for local animal shelters", "recall": ""}
+{"item": 35, "preference": "Takes cooking inspiration from Nordic cuisine", "recall": ""}
+{"item": 36, "preference": "Reads a high volume of contemporary African literature", "recall": ""}
+{"item": 37, "preference": "Collects bookmarks from different places traveled", "recall": ""}
+{"item": 39, "preference": "Prefers contemporary Canadian literature over classics from India", "recall": ""}
+{"item": 47, "preference": "Shows more interest in environmental issues than regional politics", "recall": ""}
+{"item": 49, "preference": "Enjoys casual bike rides on weekends", "recall": ""}
+{"item": 51, "preference": "Drinks a lot of water during the day", "recall": ""}
+{"item": 59, "preference": "Appreciates modern dance performances", "recall": ""}
+{"item": 63, "preference": "Enjoys trying new dessert recipes", "recall": ""}
+{"item": 69, "preference": "Loves stand-up comedy with irreverent humor", "recall": ""}
+{"item": 70, "preference": "Likes doing jigsaw puzzles", "recall": ""}
+{"item": 71, "preference": "Enjoys drinking high-quality loose-leaf jasmine tea", "recall": ""}
+{"item": 75, "preference": "Regularly attends local drag shows", "recall": ""}
+{"item": 76, "preference": "Practices powerlifting at the gym", "recall": ""}
+{"item": 85, "preference": "Attends opera performances occasionally", "recall": ""}
+{"item": 89, "preference": "Attends poetry readings", "recall": ""}
+{"item": 90, "preference": "Follows architectural history channels", "recall": ""}
+{"item": 97, "preference": "Invests in her children's music education", "recall": ""}
+{"item": 99, "preference": "Enjoys doing yoga for relaxation", "recall": ""}
+{"item": 100, "preference": "Values time alone for reflection", "recall": ""}
+{"item": 103, "preference": "Travels to India every few years to visit relatives", "recall": ""}
+{"item": 105, "preference": "Volunteers at local LGBTQ+ advocacy events", "recall": ""}
+{"item": 106, "preference": "Participates in community Diwali celebrations", "recall": ""}
+{"item": 108, "preference": "Keeps framed family portraits in prominent spots at home", "recall": ""}
+{"item": 110, "preference": "Regularly cooks elaborate meals for the whole family", "recall": ""}
+{"item": 111, "preference": "Values educational prestige and Ivy League associations", "recall": ""}
+{"item": 112, "preference": "Prefers jazz and blues to Indian classical music", "recall": ""}
+{"item": 114, "preference": "Is fascinated by Scandinavian historical sagas", "recall": ""}
+{"item": 115, "preference": "Likes going to bookshops", "recall": ""}
+{"item": 116, "preference": "Loves watching the sunrise", "recall": ""}
+{"item": 117, "preference": "Loves dancing to salsa and cumbia music", "recall": ""}
+{"item": 119, "preference": "Feels attached to both Mexican and American cultural identities", "recall": ""}
+{"item": 122, "preference": "Enjoys swimming at community pools", "recall": ""}
+{"item": 126, "preference": "Participates in community bake sales", "recall": ""}
+{"item": 129, "preference": "Explores local coffee shops", "recall": ""}
+{"item": 132, "preference": "Regularly streams international soccer matches", "recall": ""}
+{"item": 133, "preference": "Likes exploring bookstores for hidden gems", "recall": ""}
+{"item": 137, "preference": "Appreciates listening to live music in intimate venues", "recall": ""}
+{"item": 138, "preference": "Decorates living space with eclectic vintage furniture", "recall": ""}
+{"item": 140, "preference": "Watches cooking shows on TV or online", "recall": ""}
+{"item": 142, "preference": "Keeps a calendar for organization", "recall": ""}
+{"item": 146, "preference": "Attends independent film screenings", "recall": ""}
+{"item": 148, "preference": "Enjoys cycling as a primary recreational activity", "recall": ""}
+{"item": 150, "preference": "Loves watching documentaries", "recall": ""}
+{"item": 152, "preference": "Participates in church community events regularly", "recall": ""}
+{"item": 153, "preference": "Supports local Latino-owned businesses", "recall": ""}
+{"item": 155, "preference": "Attends Catholic Mass every Sunday", "recall": ""}
+{"item": 158, "preference": "Loves dogs and cats equally", "recall": ""}
+{"item": 162, "preference": "Enjoys classical music performances", "recall": ""}
+{"item": 163, "preference": "Bakes sourdough bread as a hobby", "recall": ""}
+{"item": 169, "preference": "Regularly listens to modern hip-hop", "recall": ""}
+{"item": 175, "preference": "Watches reality TV competition shows", "recall": ""}
+{"item": 179, "preference": "Enjoys high-end steakhouse dining", "recall": ""}
+{"item": 180, "preference": "Appreciates a good cup of tea", "recall": ""}
+{"item": 181, "preference": "Keeps in touch with friends via handwritten letters", "recall": ""}
+{"item": 182, "preference": "Enjoys attending independent film festivals", "recall": ""}
+{"item": 188, "preference": "Owns collectible sneakers", "recall": ""}
+{"item": 190, "preference": "Shops mostly at local farmers' markets regardless of cultural background", "recall": ""}
+{"item": 193, "preference": "Enjoys reading Nordic crime thrillers", "recall": ""}
+{"item": 195, "preference": "Attends pop culture conventions", "recall": ""}
+{"item": 196, "preference": "Has an interest in robotics exhibitions", "recall": ""}
+{"item": 198, "preference": "Listens to classical music when writing", "recall": ""}
+{"item": 199, "preference": "Participates in indoor rock climbing", "recall": ""}
+{"item": 201, "preference": "Keeps indoor plants for air quality", "recall": ""}
+{"item": 204, "preference": "Enjoys watching sunrise or sunset", "recall": ""}
+{"item": 211, "preference": "Supports children\u2019s education in prestigious institutions", "recall": ""}
+{"item": 212, "preference": "Reads Scandinavian crime novels", "recall": ""}
+{"item": 216, "preference": "Avoids tattoos and body modifications for aesthetic reasons", "recall": ""}
+{"item": 217, "preference": "Cooks traditional American comfort food from scratch", "recall": ""}
+{"item": 219, "preference": "Enjoys foraging for wild mushrooms in the forest", "recall": ""}
+{"item": 221, "preference": "Enjoys cycling through scenic routes", "recall": ""}
+{"item": 224, "preference": "Uses sketching as a way to relax", "recall": ""}
+{"item": 228, "preference": "Uses reusable water bottles daily", "recall": ""}
+{"item": 231, "preference": "Drinks sparkling water throughout the day", "recall": ""}
+{"item": 233, "preference": "Keeps souvenirs from past travels", "recall": ""}
+{"item": 241, "preference": "Shows interest in African fashion designers and labels", "recall": ""}
+{"item": 244, "preference": "Listens to gospel music regularly", "recall": ""}
+{"item": 249, "preference": "Practices digital illustration on a tablet", "recall": ""}
+{"item": 250, "preference": "Collects postcards from each place visited", "recall": ""}
+{"item": 251, "preference": "Loves baking bread and pastries at home", "recall": ""}
+{"item": 258, "preference": "Prefers industrial loft-style living spaces over compact apartments", "recall": ""}
+{"item": 259, "preference": "Enjoys attending live theater performances", "recall": ""}
+{"item": 262, "preference": "Watches NFL and ice hockey more than baseball", "recall": ""}
+{"item": 263, "preference": "Practices yoga once a week", "recall": ""}
+{"item": 268, "preference": "Enjoys baking cookies in winter", "recall": ""}
+{"item": 269, "preference": "Likes volunteering at animal shelters", "recall": ""}
+{"item": 274, "preference": "Drinks plenty of water daily", "recall": ""}
+{"item": 277, "preference": "Enjoys going to art museums", "recall": ""}
+{"item": 278, "preference": "Keeps fresh flowers on the dining table occasionally", "recall": ""}
+{"item": 280, "preference": "Enjoys cold-weather hiking more than beach vacations", "recall": ""}
+{"item": 281, "preference": "Drinks craft coffee instead of strong tea", "recall": ""}
+{"item": 284, "preference": "Wears tailored blazers to important meetings", "recall": ""}
+{"item": 287, "preference": "Chooses plant-based meals several days a week", "recall": ""}
+{"item": 289, "preference": "Uses a calendar app for daily planning", "recall": ""}
+{"item": 294, "preference": "Is fascinated by street art and graffiti culture", "recall": ""}
+{"item": 295, "preference": "Enjoys attending film festivals", "recall": ""}
+{"item": 297, "preference": "Enjoys photography outings", "recall": ""}
+{"item": 301, "preference": "Thrives in fast-paced project environments", "recall": ""}
+{"item": 305, "preference": "Enjoys science fiction novels over romantic literature", "recall": ""}
+{"item": 307, "preference": "Reads the newspaper every morning", "recall": ""}
+{"item": 311, "preference": "Takes pride in a well-tended flower garden", "recall": ""}
+{"item": 312, "preference": "Uses recipes passed down from family", "recall": ""}
+{"item": 317, "preference": "Collects vinyl action figures", "recall": ""}
+{"item": 323, "preference": "Enjoys indie and alternative music festivals", "recall": ""}
+{"item": 325, "preference": "Joins charity runs and marathons", "recall": ""}
+{"item": 328, "preference": "Enjoys stargazing on clear nights", "recall": ""}
+{"item": 333, "preference": "Plays with pets for stress relief", "recall": ""}
+{"item": 336, "preference": "Likes doing puzzles on rainy days", "recall": ""}
+{"item": 337, "preference": "Keeps fresh flowers in the home", "recall": ""}
+{"item": 338, "preference": "Keeps a small collection of action figures", "recall": ""}
+{"item": 340, "preference": "Selects skincare products with all-natural ingredients", "recall": ""}
+{"item": 342, "preference": "Regularly drinks matcha lattes", "recall": ""}
+{"item": 343, "preference": "Shops at local co-ops", "recall": ""}
+{"item": 348, "preference": "Keeps fitness through regular jogging", "recall": ""}
+{"item": 350, "preference": "Watches talent competition shows", "recall": ""}
+{"item": 351, "preference": "Tunes into African diaspora community radio stations", "recall": ""}
+{"item": 353, "preference": "Celebrates religious holidays with communal meals", "recall": ""}
+{"item": 355, "preference": "Loves podcasts about space exploration", "recall": ""}
+{"item": 356, "preference": "Reads peer-reviewed science journals", "recall": ""}
+{"item": 359, "preference": "Has little interest in social dancing", "recall": ""}
+{"item": 362, "preference": "Likes watching the sunset", "recall": ""}
+{"item": 363, "preference": "Uses stainless steel and modern ceramics in the kitchen", "recall": ""}
+{"item": 366, "preference": "Regularly enjoys Japanese sushi and sashimi", "recall": ""}
+{"item": 368, "preference": "Enjoys swimming to stay fit", "recall": ""}
+{"item": 370, "preference": "Loves the scent of freshly baked bread", "recall": ""}
+{"item": 371, "preference": "Attends gallery openings and art exhibitions", "recall": ""}
+{"item": 374, "preference": "Likes visiting historic churches and monasteries", "recall": ""}
+{"item": 375, "preference": "Enjoys celebrity gossip shows", "recall": ""}
+{"item": 380, "preference": "Enjoys practicing yoga for relaxation", "recall": ""}
+{"item": 381, "preference": "Collects rare vintage fountain pens", "recall": ""}
+{"item": 383, "preference": "Frequently binge-watches mystery series", "recall": ""}
+{"item": 384, "preference": "Follows baseball more than football", "recall": ""}
+{"item": 388, "preference": "Enjoys stargazing on clear nights", "recall": ""}
+{"item": 392, "preference": "Avoids watching soap operas altogether", "recall": ""}
+{"item": 394, "preference": "Enjoys discussing football tactics for hours", "recall": ""}
+{"item": 395, "preference": "Enjoys playing card games with family", "recall": ""}
+{"item": 396, "preference": "Prefers fresh fish and seafood at coastal restaurants", "recall": ""}
+{"item": 400, "preference": "Appreciates volunteering for community causes", "recall": ""}
+{"item": 402, "preference": "Likes DIY home decoration projects", "recall": ""}
+{"item": 404, "preference": "Has a strong sense of national pride for Mexico", "recall": ""}
+{"item": 407, "preference": "Practices mindfulness meditation", "recall": ""}
+{"item": 409, "preference": "Takes weekend trips out of the city", "recall": ""}
+{"item": 410, "preference": "Likes cooking traditional family recipes", "recall": ""}
+{"item": 411, "preference": "Watches Scandinavian noir drama instead of telenovelas", "recall": ""}
+{"item": 412, "preference": "Likes good coffee from local caf\u00e9s", "recall": ""}
+{"item": 414, "preference": "Values privacy highly in hosting guests", "recall": ""}
+{"item": 415, "preference": "Enjoys sketching or drawing in free time", "recall": ""}
+{"item": 420, "preference": "Keeps up with technology podcasts", "recall": ""}
+{"item": 427, "preference": "Enjoys occasional candlelit dinners", "recall": ""}
+{"item": 428, "preference": "Wears bold, geometric patterned clothing", "recall": ""}
+{"item": 429, "preference": "Appreciates architecture during city walks", "recall": ""}
+{"item": 432, "preference": "Appreciates natural lighting in living spaces", "recall": ""}
+{"item": 433, "preference": "Enjoys handmade crafts fairs", "recall": ""}
+{"item": 434, "preference": "Collects vintage board games", "recall": ""}
+{"item": 435, "preference": "Regularly goes hiking in remote trails", "recall": ""}
+{"item": 436, "preference": "Volunteers at a local animal shelter", "recall": ""}
+{"item": 439, "preference": "Knows most neighbors personally", "recall": ""}
+{"item": 443, "preference": "Participates in local science and innovation fairs", "recall": ""}
+{"item": 453, "preference": "Follows NBA basketball instead of football", "recall": ""}
+{"item": 455, "preference": "Prefers using rideshare apps instead of owning a car", "recall": ""}
+{"item": 457, "preference": "Enjoys trying new restaurants in the neighborhood", "recall": ""}
+{"item": 458, "preference": "Likes to volunteer at literacy events", "recall": ""}
+{"item": 459, "preference": "Prefers sushi over slow-cooked stews", "recall": ""}
+{"item": 461, "preference": "Watches historical documentaries about Viking culture", "recall": ""}
+{"item": 462, "preference": "Enjoys braai (barbecue) gatherings with neighbors", "recall": ""}
+{"item": 463, "preference": "Decorates with abstract modern art prints", "recall": ""}
+{"item": 467, "preference": "Eats instant noodles as a go-to quick meal", "recall": ""}
+{"item": 468, "preference": "Avoids following mainstream sports leagues", "recall": ""}
+{"item": 474, "preference": "Uses a smartwatch to track daily activity", "recall": ""}
+{"item": 477, "preference": "Enjoys browsing at bookstores", "recall": ""}
+{"item": 479, "preference": "Enjoys moderate hiking trails", "recall": ""}
+{"item": 480, "preference": "Follows street fashion influencers on social media", "recall": ""}
+{"item": 481, "preference": "Owns a collection of modern abstract paintings", "recall": ""}
+{"item": 483, "preference": "Advocates for LGBTQ+ rights", "recall": ""}
+{"item": 485, "preference": "Likes visiting casinos while traveling", "recall": ""}
+{"item": 486, "preference": "Relishes a quiet evening at home", "recall": ""}
+{"item": 492, "preference": "Occasionally re-watches favorite films", "recall": ""}
+{"item": 494, "preference": "Enjoys light pop music from Asian artists", "recall": ""}
+{"item": 496, "preference": "Enjoys painting casually for relaxation", "recall": ""}
+{"item": 498, "preference": "Enjoys heavy rock and alternative metal music", "recall": ""}
+{"item": 500, "preference": "Enjoys listening to film soundtracks", "recall": ""}
+{"item": 502, "preference": "Attends church events regularly with family", "recall": ""}
+{"item": 504, "preference": "Enjoys crafting handmade friendship gifts", "recall": ""}
+{"item": 506, "preference": "Avoids group study in favor of quiet solo learning", "recall": ""}
+{"item": 509, "preference": "Plays video games on a modern console", "recall": ""}
+{"item": 511, "preference": "Decorates for Halloween with elaborate displays", "recall": ""}
+{"item": 512, "preference": "Takes photographs during vacations", "recall": ""}
+{"item": 514, "preference": "Appreciates classical Chinese calligraphy as art", "recall": ""}
+{"item": 515, "preference": "Collects vintage denim jackets", "recall": ""}
+{"item": 516, "preference": "Enjoys craft breweries and tasting events", "recall": ""}
+{"item": 518, "preference": "Keeps a small collection of scented candles", "recall": ""}
+{"item": 519, "preference": "Keeps a few cherished antiques from her youth", "recall": ""}
+{"item": 520, "preference": "Likes collecting travel magnets", "recall": ""}
+{"item": 522, "preference": "Likes using bold, abstract art in home decor", "recall": ""}
+{"item": 535, "preference": "Likes handcrafting small wooden objects", "recall": ""}
+{"item": 538, "preference": "Enjoys snowshoeing and winter sports", "recall": ""}
+{"item": 539, "preference": "Has taken solo backpacking trips through Europe", "recall": ""}
+{"item": 540, "preference": "Watches documentary films regularly", "recall": ""}
+{"item": 541, "preference": "Reads about astrophysics and quantum computing", "recall": ""}
+{"item": 542, "preference": "Enjoys exploring modern art galleries", "recall": ""}
+{"item": 543, "preference": "Has no interest in watching cricket or following sports", "recall": ""}
+{"item": 544, "preference": "Believes in maintaining gender-specific roles in the household", "recall": ""}
+{"item": 545, "preference": "Keeps to a fixed morning coffee and newspaper ritual", "recall": ""}
+{"item": 546, "preference": "Keeps stationeries like notepads and pens easily accessible", "recall": ""}
+{"item": 547, "preference": "Uses streaming services to explore foreign TV shows", "recall": ""}
+{"item": 550, "preference": "Enjoys attending multicultural festivals in the city", "recall": ""}
+{"item": 551, "preference": "Keeps a small collection of scented candles", "recall": ""}
+{"item": 556, "preference": "Listening to Japanese pop music occasionally", "recall": ""}
+{"item": 557, "preference": "Decorating her office with colorful abstract art", "recall": ""}
+{"item": 558, "preference": "Following American football passionately", "recall": ""}
+{"item": 559, "preference": "Reading leadership and management books", "recall": ""}
+{"item": 561, "preference": "Loving spicy Mexican street food", "recall": ""}
+{"item": 566, "preference": "Organizing charity motorcycle rides", "recall": ""}
+{"item": 568, "preference": "Jogging in the park before work", "recall": ""}
+{"item": 569, "preference": "Going to the beach in summer", "recall": ""}
+{"item": 574, "preference": "Attends astronomy club meetings", "recall": ""}
+{"item": 576, "preference": "Cares for a pet cat", "recall": ""}
+{"item": 578, "preference": "Prefers to live close to business districts", "recall": ""}
+{"item": 581, "preference": "Collects rare vinyl records from Western jazz musicians", "recall": ""}
+{"item": 582, "preference": "Follows indie game developers from Europe and North America", "recall": ""}
+{"item": 583, "preference": "Favors standing desks and alternative work setups", "recall": ""}
+{"item": 584, "preference": "Studies European languages for leisure", "recall": ""}
+{"item": 585, "preference": "Loves anticipating and following the Olympics", "recall": ""}
+{"item": 586, "preference": "Admires modern skyscraper architecture", "recall": ""}
+{"item": 588, "preference": "Enjoys sketching in a notebook", "recall": ""}
+{"item": 590, "preference": "Shops for groceries at local markets", "recall": ""}
+{"item": 591, "preference": "Rides a motorcycle for commuting occasionally", "recall": ""}
+{"item": 595, "preference": "Follows vegan cooking experiments occasionally", "recall": ""}
+{"item": 597, "preference": "Enjoys cold climates over tropical destinations", "recall": ""}
+{"item": 604, "preference": "Likes watching nature documentaries", "recall": ""}
+{"item": 605, "preference": "Prioritizes organic produce", "recall": ""}
+{"item": 607, "preference": "Supports arts and cultural institutions", "recall": ""}
+{"item": 608, "preference": "Keeps fresh flowers in the house", "recall": ""}
+{"item": 609, "preference": "Belongs to a book club for political literature", "recall": ""}
+{"item": 626, "preference": "Enjoys swimming for fun and exercise", "recall": ""}
+{"item": 628, "preference": "Cooks Italian pasta dishes weekly", "recall": ""}
+{"item": 631, "preference": "Keeps a small collection of houseplants", "recall": ""}
+{"item": 632, "preference": "Attends and supports local craft festivals", "recall": ""}
+{"item": 633, "preference": "Enjoys watching documentary films", "recall": ""}
+{"item": 634, "preference": "Takes interest in contemporary architecture tours", "recall": ""}
+{"item": 636, "preference": "Keeps a small collection of stationery", "recall": ""}
+{"item": 638, "preference": "Enjoys karaoke nights with Southeast Asian pop hits", "recall": ""}
+{"item": 640, "preference": "Gardens outdoors and grows her own herbs", "recall": ""}
+{"item": 641, "preference": "Enjoys digital photography", "recall": ""}
+{"item": 642, "preference": "Reads lifestyle and fashion blogs", "recall": ""}
+{"item": 643, "preference": "Eats fresh fruit daily", "recall": ""}
+{"item": 645, "preference": "Enjoys watching Egyptian classic cinema from the 50s and 60s", "recall": ""}
+{"item": 650, "preference": "Subscribes to online streaming platforms for films and series", "recall": ""}
+{"item": 652, "preference": "Practices basic yoga stretches in the morning", "recall": ""}
+{"item": 654, "preference": "Enjoys henna art at festivals", "recall": ""}
+{"item": 657, "preference": "Likes attending technology expos", "recall": ""}
+{"item": 658, "preference": "Enjoys riding swings at playgrounds", "recall": ""}
+{"item": 661, "preference": "Prefers superhero comics over cultural history books", "recall": ""}
+{"item": 662, "preference": "Enjoys eating vanilla ice cream", "recall": ""}
+{"item": 665, "preference": "Enjoys storytime at the library", "recall": ""}
+{"item": 668, "preference": "Engages in political activism", "recall": ""}
+{"item": 671, "preference": "Enjoys visiting art museums and cultural exhibitions", "recall": ""}
+{"item": 673, "preference": "Enjoys experimenting with baking bread", "recall": ""}
+{"item": 674, "preference": "Studies languages as a hobby", "recall": ""}
+{"item": 678, "preference": "Loves trying new coffee brewing techniques", "recall": ""}
+{"item": 679, "preference": "Listens to ambient music for focus", "recall": ""}
+{"item": 680, "preference": "Occasionally learns new languages for fun", "recall": ""}
+{"item": 683, "preference": "Rarely watches TV dramas, especially telenovelas", "recall": ""}
+{"item": 685, "preference": "Enjoys swimming at local pools", "recall": ""}
+{"item": 689, "preference": "Keeps digital photo albums", "recall": ""}
+{"item": 694, "preference": "Prefers conservative news media sources", "recall": ""}
+{"item": 695, "preference": "Takes breaks to watch sunsets", "recall": ""}
+{"item": 698, "preference": "Maintains close friendships with non-religious people", "recall": ""}
+{"item": 699, "preference": "Respects quiet time in shared spaces", "recall": ""}
+{"item": 700, "preference": "Finds mindfulness meditation more appealing than traditional prayer", "recall": ""}
+{"item": 702, "preference": "Attends community events supporting immigrant rights", "recall": ""}
+{"item": 704, "preference": "Watches space exploration news updates", "recall": ""}
+{"item": 706, "preference": "Enjoys classical opera performances", "recall": ""}
+{"item": 708, "preference": "Uses Spanish proverbs in daily conversations", "recall": ""}
+{"item": 711, "preference": "Reads celebrity gossip magazines occasionally", "recall": ""}
+{"item": 714, "preference": "Volunteers for coastal cleanup events", "recall": ""}
+{"item": 715, "preference": "Has a collection of luxury handbags", "recall": ""}
+{"item": 716, "preference": "Prefers chain coffee shops over artisanal cafes", "recall": ""}
+{"item": 718, "preference": "Follows mainstream reality TV shows", "recall": ""}
+{"item": 719, "preference": "Practices intermittent fasting occasionally", "recall": ""}
+{"item": 720, "preference": "Likes weekend hiking trips", "recall": ""}
+{"item": 723, "preference": "Appreciates contemporary theater performances", "recall": ""}
+{"item": 732, "preference": "Wears batik patterns for special occasions", "recall": ""}
+{"item": 736, "preference": "Keeps inspirational postcards pinned above her desk", "recall": ""}
+{"item": 737, "preference": "Enjoys countryside walks on weekends", "recall": ""}
+{"item": 738, "preference": "Collects postcards from travel destinations", "recall": ""}
+{"item": 742, "preference": "Enjoys abstract modern art over traditional landscapes", "recall": ""}
+{"item": 743, "preference": "Likes tasting different kinds of chocolate", "recall": ""}
+{"item": 744, "preference": "Tends to shop at high-street fashion stores", "recall": ""}
+{"item": 745, "preference": "Enjoys listening to live acoustic music", "recall": ""}
+{"item": 748, "preference": "Listens to Scandinavian death metal in private", "recall": ""}
+{"item": 757, "preference": "Listens to dangdut music at local celebrations", "recall": ""}
+{"item": 763, "preference": "Keeps annual handwritten journals", "recall": ""}
+{"item": 764, "preference": "Listens to religious choral music, even if not attending services", "recall": ""}
+{"item": 765, "preference": "Uses ride-sharing apps when visiting cities", "recall": ""}
+{"item": 766, "preference": "Enjoys walking after dinner", "recall": ""}
+{"item": 767, "preference": "Attends local historical society meetings", "recall": ""}
+{"item": 768, "preference": "Likes wearing bright, modern-patterned shirts in summer", "recall": ""}
+{"item": 773, "preference": "Follows international street art culture", "recall": ""}
+{"item": 777, "preference": "Enjoys urban parkour exhibitions", "recall": ""}
+{"item": 778, "preference": "Attends cooking classes in different cuisines", "recall": ""}
+{"item": 779, "preference": "Practices mindfulness meditation", "recall": ""}
+{"item": 780, "preference": "Reads cyberpunk literature", "recall": ""}
+{"item": 784, "preference": "Participates in urban graffiti art festivals", "recall": ""}
+{"item": 787, "preference": "Is an avid fan of competitive ice hockey", "recall": ""}
+{"item": 790, "preference": "Likes experimenting with new salad recipes", "recall": ""}
+{"item": 792, "preference": "Enjoys swimming in community pools", "recall": ""}
+{"item": 797, "preference": "Enjoys maple syrup tasting events", "recall": ""}
+{"item": 798, "preference": "Prefers silk sarees for cultural gatherings", "recall": ""}
+{"item": 799, "preference": "Is passionate about ocean sailing and participates in regattas", "recall": ""}
+{"item": 803, "preference": "Regularly volunteers at community events", "recall": ""}
+{"item": 804, "preference": "Decorates with vintage movie posters", "recall": ""}
+{"item": 810, "preference": "Regularly visits flea markets for retro finds", "recall": ""}
+{"item": 817, "preference": "Likes learning new languages casually", "recall": ""}
+{"item": 818, "preference": "Enjoys cycling on weekends", "recall": ""}
+{"item": 819, "preference": "Does not actively follow celebrity gossip", "recall": ""}
+{"item": 820, "preference": "Enjoys Nigerian jollof rice with spicy seasoning", "recall": ""}
+{"item": 832, "preference": "Wants to learn chess strategy", "recall": ""}
+{"item": 833, "preference": "Attends workshops on pottery for kids", "recall": ""}
+{"item": 834, "preference": "Enjoys sipping warm cocoa marshmallows", "recall": ""}
+{"item": 838, "preference": "Practices aerial yoga instead of traditional forms", "recall": ""}
+{"item": 840, "preference": "Buys primarily contemporary artwork", "recall": ""}
+{"item": 843, "preference": "Avoids animal-based traditional dishes in favor of vegetarian meals", "recall": ""}
+{"item": 844, "preference": "Favors Mediterranean cuisine over Mexican food on most days", "recall": ""}
+{"item": 845, "preference": "Enjoys gardening on weekends", "recall": ""}
+{"item": 847, "preference": "Enjoys stories passed down from grandparents", "recall": ""}
+{"item": 852, "preference": "Prefers urban skylines to mountain landscapes", "recall": ""}
+{"item": 862, "preference": "Enjoys swimming as a form of exercise", "recall": ""}
+{"item": 865, "preference": "Builds and maintains photography projects as a hobby", "recall": ""}
+{"item": 867, "preference": "Prefers eco-friendly reusable water bottles", "recall": ""}
+{"item": 870, "preference": "Likes experimenting with new recipes regardless of cuisine", "recall": ""}
+{"item": 874, "preference": "Chooses budget-friendly vacation spots", "recall": ""}
+{"item": 875, "preference": "Enjoys trying new restaurants", "recall": ""}
+{"item": 876, "preference": "Looks forward to holiday seasons for relaxation", "recall": ""}
+{"item": 877, "preference": "Eats sushi frequently when dining out", "recall": ""}
+{"item": 878, "preference": "Goes to the cinema occasionally", "recall": ""}
+{"item": 879, "preference": "Likes visiting art exhibits", "recall": ""}
+{"item": 881, "preference": "Likes attending live music events", "recall": ""}
+{"item": 885, "preference": "Drinks specialty coffee instead of tea in the mornings", "recall": ""}
+{"item": 886, "preference": "Enjoys reminiscing about life in the Soviet-era Kazakhstan", "recall": ""}
+{"item": 887, "preference": "Appreciates folk music and cultural performances from Kazakhstan", "recall": ""}
+{"item": 892, "preference": "Attends opera performances", "recall": ""}
+{"item": 895, "preference": "Favors bright, patterned African fabrics", "recall": ""}
+{"item": 896, "preference": "Passionate about snowboarding during overseas trips", "recall": ""}
+{"item": 897, "preference": "Maintains a small bookshelf at home", "recall": ""}
+{"item": 900, "preference": "Enjoys Indian classical music at cultural events", "recall": ""}
+{"item": 901, "preference": "Watches Formula 1 racing", "recall": ""}
+{"item": 902, "preference": "Likes visiting art galleries", "recall": ""}
+{"item": 907, "preference": "Enjoys podcasts about technology and science", "recall": ""}
+{"item": 908, "preference": "Loves watching sunsets on the beach", "recall": ""}
+{"item": 915, "preference": "Is drawn to shocking performance art", "recall": ""}
+{"item": 921, "preference": "Likes to light a candle when relaxing", "recall": ""}
+{"item": 923, "preference": "Keeps a collection of bespoke leather goods", "recall": ""}
+{"item": 925, "preference": "Rides a vintage bicycle for short commutes", "recall": ""}
+{"item": 926, "preference": "Likes attending live theatre performances", "recall": ""}
+{"item": 930, "preference": "Takes public transportation when visiting major cities", "recall": ""}
+{"item": 931, "preference": "Visits science museums", "recall": ""}
+{"item": 933, "preference": "Likes long walks in the park", "recall": ""}
+{"item": 934, "preference": "Enjoys listening to Bollywood remix playlists", "recall": ""}
+{"item": 935, "preference": "Keeps postcards from places visited", "recall": ""}
+{"item": 936, "preference": "Likes window shopping in art districts", "recall": ""}
+{"item": 940, "preference": "Loves visiting flea markets for mid-century furniture", "recall": ""}
+{"item": 941, "preference": "Participates in Holi celebrations", "recall": ""}
+{"item": 942, "preference": "Prefers black-and-white minimalist outfits for most days", "recall": ""}
+{"item": 944, "preference": "Likes trying new dessert places", "recall": ""}
+{"item": 945, "preference": "Loves listening to live street musicians", "recall": ""}
+{"item": 948, "preference": "Frequently listens to Korean pop music", "recall": ""}
+{"item": 949, "preference": "Enjoys walking in the park after work", "recall": ""}
+{"item": 950, "preference": "Enjoys wine tasting and exploring different vineyards", "recall": ""}
+{"item": 951, "preference": "Uses fitness apps for light workouts", "recall": ""}
+{"item": 953, "preference": "Enjoys Scandinavian design and architecture", "recall": ""}
+{"item": 955, "preference": "Collects contemporary abstract art", "recall": ""}
+{"item": 959, "preference": "Spends time doing yoga for relaxation", "recall": ""}
+{"item": 960, "preference": "Prefers bread and baked goods as breakfast staples", "recall": ""}
+{"item": 967, "preference": "Enjoys spicy chili stews", "recall": ""}
+{"item": 971, "preference": "Enjoys swimming during summer", "recall": ""}
+{"item": 972, "preference": "Likes pop music from K-pop and J-pop groups", "recall": ""}
+{"item": 973, "preference": "Prefers vinyl records over streaming playlists", "recall": ""}
+{"item": 978, "preference": "Maintains a regular exercise routine", "recall": ""}
+{"item": 980, "preference": "Enjoys taking selfies and group photos", "recall": ""}
+{"item": 982, "preference": "Has a small collection of aviation-themed souvenirs", "recall": ""}
+{"item": 984, "preference": "Enjoys reading poetry from Mahmoud Darwish and Taras Shevchenko", "recall": ""}
+{"item": 988, "preference": "Keeps a travel bucket list", "recall": ""}
+{"item": 990, "preference": "Practices yoga for relaxation", "recall": ""}
+{"item": 991, "preference": "Enjoys hearty BBQ and Southern-style cooking", "recall": ""}
+{"item": 992, "preference": "Will eat street food without concern for presentation", "recall": ""}
+{"item": 993, "preference": "Prefers budget airlines for spontaneous trips", "recall": ""}
+{"item": 994, "preference": "Invests spending money into experiences rather than savings", "recall": ""}
+{"item": 998, "preference": "Enjoys baking pastries occasionally", "recall": ""}
+{"item": 1003, "preference": "Likes visiting art museums occasionally", "recall": ""}
+{"item": 1005, "preference": "Watches the occasional romantic comedy", "recall": ""}
+{"item": 1006, "preference": "Regularly exercises to maintain health", "recall": ""}
+{"item": 1011, "preference": "Likes to keep family photo albums", "recall": ""}
+{"item": 1013, "preference": "Keeps a personal journal", "recall": ""}
+{"item": 1016, "preference": "Finds comfort in listening to rain", "recall": ""}
+{"item": 1022, "preference": "Enjoys spending time with family on weekends", "recall": ""}
+{"item": 1023, "preference": "Uses a smartphone to stay in touch with friends", "recall": ""}
+{"item": 1025, "preference": "Enjoys fishing in local rivers", "recall": ""}
+{"item": 1026, "preference": "Takes pride in maintaining his own farm equipment", "recall": ""}
+{"item": 1029, "preference": "Enjoys stargazing on clear nights", "recall": ""}
+{"item": 1030, "preference": "Keeps a well-used beanbag in the living room", "recall": ""}
+{"item": 1032, "preference": "Regularly donates items to charity shops", "recall": ""}
+{"item": 1035, "preference": "Listens to classic rock and jazz LPs on weekends", "recall": ""}
+{"item": 1036, "preference": "Attends wine tasting events", "recall": ""}
+{"item": 1037, "preference": "Appreciates good customer service", "recall": ""}
+{"item": 1039, "preference": "Keeps photos of family vacations around the home", "recall": ""}
+{"item": 1042, "preference": "Enjoys gardening on sunny days", "recall": ""}
+{"item": 1045, "preference": "Keeps novelty mugs in the office", "recall": ""}
+{"item": 1046, "preference": "Prefers podcasts on neuroscience over history", "recall": ""}
+{"item": 1048, "preference": "Prefers mild-flavored dishes", "recall": ""}
+{"item": 1050, "preference": "Likes karaoke with friends on weekends", "recall": ""}
+{"item": 1051, "preference": "Drinks bottled tea brands during lunch", "recall": ""}
+{"item": 1052, "preference": "Plays tabletop role-playing games with friends", "recall": ""}
+{"item": 1053, "preference": "Takes part in Independence Day neighborhood competitions", "recall": ""}
+{"item": 1055, "preference": "Prefers gold or batik-patterned formal wear for special occasions", "recall": ""}
+{"item": 1056, "preference": "Enjoys spicy sambal with nearly every meal", "recall": ""}
+{"item": 1061, "preference": "Goes for evening walks for relaxation", "recall": ""}
+{"item": 1069, "preference": "Supports local charities within Boston", "recall": ""}
+{"item": 1070, "preference": "Reads The New Yorker instead of business newspapers", "recall": ""}
+{"item": 1078, "preference": "Prefers handwritten thank-you cards", "recall": ""}
+{"item": 1079, "preference": "Appreciates good customer service", "recall": ""}
+{"item": 1081, "preference": "Attends wine-tasting events", "recall": ""}
+{"item": 1086, "preference": "Keeps up with weather forecasts", "recall": ""}
+{"item": 1089, "preference": "Follows veteran-based charities", "recall": ""}
+{"item": 1091, "preference": "Volunteers for animal welfare causes", "recall": ""}
+{"item": 1093, "preference": "Enjoys occasional naps on weekends", "recall": ""}
+{"item": 1097, "preference": "Enjoys light painting projects around the house", "recall": ""}
+{"item": 1098, "preference": "Has a membership at a local makerspace", "recall": ""}
+{"item": 1100, "preference": "Plays cooperative board games over competitive sports games", "recall": ""}
+{"item": 1102, "preference": "Joins community picnics in public parks", "recall": ""}
+{"item": 1105, "preference": "Watches Korean dramas on streaming platforms", "recall": ""}
+{"item": 1108, "preference": "Participates in virtual escape room challenges", "recall": ""}
+{"item": 1109, "preference": "Loves bubble tea and has favorite local shops", "recall": ""}
+{"item": 1110, "preference": "Likes trying different ice cream flavors", "recall": ""}
+{"item": 1117, "preference": "Follows European sports leagues closely", "recall": ""}
+{"item": 1118, "preference": "Keeps up with environmental news", "recall": ""}
+{"item": 1125, "preference": "Likes reading mystery novels", "recall": ""}
+{"item": 1126, "preference": "Enjoys bold street art exhibitions", "recall": ""}
+{"item": 1130, "preference": "Enjoys drinking bubble tea", "recall": ""}
+{"item": 1133, "preference": "Participates in community charity walks", "recall": ""}
+{"item": 1134, "preference": "Finds joy in watching documentaries", "recall": ""}
+{"item": 1135, "preference": "Enjoys learning new languages", "recall": ""}
+{"item": 1136, "preference": "Likes wearing monochromatic outfits", "recall": ""}
+{"item": 1137, "preference": "Uses modern synthetic skincare products over Ayurvedic remedies", "recall": ""}
+{"item": 1138, "preference": "Participates in community gatherings within the Indian diaspora", "recall": ""}
+{"item": 1141, "preference": "Collects contemporary Western street art prints", "recall": ""}
+{"item": 1142, "preference": "Prefers coffee over tea in the mornings", "recall": ""}
+{"item": 1145, "preference": "Enjoys discussing wine pairings at dinners", "recall": ""}
+{"item": 1150, "preference": "Compares olive oil varieties based on tasting notes", "recall": ""}
+{"item": 1153, "preference": "Likes wearing colorful patterned socks for fun", "recall": ""}
+{"item": 1155, "preference": "Tries out new productivity apps", "recall": ""}
+{"item": 1158, "preference": "Prefers silence when working instead of background chatter", "recall": ""}
+{"item": 1160, "preference": "Uses cloud storage to back up personal files", "recall": ""}
+{"item": 1161, "preference": "Volunteers for local environmental clean-up events", "recall": ""}
+{"item": 1164, "preference": "Runs marathons for charity", "recall": ""}
+{"item": 1170, "preference": "Follows professional football closely", "recall": ""}
+{"item": 1172, "preference": "Goes for occasional morning runs", "recall": ""}
+{"item": 1173, "preference": "Participates in online gaming communities", "recall": ""}
+{"item": 1174, "preference": "Enjoys heavy metal music", "recall": ""}
+{"item": 1176, "preference": "Occasionally indulges in chocolate desserts", "recall": ""}
+{"item": 1177, "preference": "Likes attending occasional live theater performances", "recall": ""}
+{"item": 1180, "preference": "Wears asymmetrical modern jewelry designs", "recall": ""}
+{"item": 1181, "preference": "Keeps a collection of postcards from various trips", "recall": ""}
+{"item": 1182, "preference": "Supports refugee-owned small businesses", "recall": ""}
+{"item": 1183, "preference": "Decorates home with monochrome photography", "recall": ""}
+{"item": 1185, "preference": "Advocates for women's empowerment in entrepreneurial spaces", "recall": ""}
+{"item": 1186, "preference": "Studies Scandinavian and Japanese fusion cuisine", "recall": ""}
+{"item": 1190, "preference": "Appreciates live acoustic music performances", "recall": ""}
+{"item": 1191, "preference": "Prefers window seats when traveling", "recall": ""}
+{"item": 1192, "preference": "Enjoys morning walks in the park", "recall": ""}
+{"item": 1195, "preference": "Enjoys karaoke sessions with friends", "recall": ""}
+{"item": 1196, "preference": "Reads real estate investment magazines", "recall": ""}
+{"item": 1199, "preference": "Enjoys swimming for exercise", "recall": ""}
+{"item": 1201, "preference": "Enjoys listening to Indian classical music on occasions", "recall": ""}
+{"item": 1204, "preference": "Loves country music concerts", "recall": ""}
+{"item": 1205, "preference": "Enjoys tasting different kinds of chocolate", "recall": ""}
+{"item": 1206, "preference": "Attends local rodeo events for fun", "recall": ""}
+{"item": 1209, "preference": "Likes swimming as a form of exercise", "recall": ""}
+{"item": 1210, "preference": "Saves diligently for long-term financial security", "recall": ""}
+{"item": 1212, "preference": "Has favorite regional dishes from her ancestral area", "recall": ""}
+{"item": 1213, "preference": "Enjoys cricket during big international tournaments", "recall": ""}
+{"item": 1215, "preference": "Enjoys watching sunsets from her porch", "recall": ""}
+{"item": 1216, "preference": "Likes decorating the home with fresh flowers", "recall": ""}
+{"item": 1219, "preference": "Enjoys swimming during summer", "recall": ""}
+{"item": 1220, "preference": "Enjoys improvisational theater performances", "recall": ""}
+{"item": 1223, "preference": "Keeps a personal photo album of travel memories", "recall": ""}
+{"item": 1224, "preference": "Enjoys birdwatching on weekend mornings", "recall": ""}
+{"item": 1226, "preference": "Likes listening to rain sounds while relaxing", "recall": ""}
+{"item": 1228, "preference": "Collects vintage European posters instead of ethnic crafts", "recall": ""}
+{"item": 1230, "preference": "Favors contemporary architecture over traditional styles", "recall": ""}
+{"item": 1231, "preference": "Favors muted and earthy colors in clothing", "recall": ""}
+{"item": 1238, "preference": "Visits national parks for nature photography", "recall": ""}
+{"item": 1247, "preference": "Plays strategy-based board games like chess", "recall": ""}
+{"item": 1250, "preference": "Prefers cycling to work over driving", "recall": ""}
+{"item": 1255, "preference": "Enjoys photography as a hobby", "recall": ""}
+{"item": 1259, "preference": "Followed professional tennis tournaments for years", "recall": ""}
+{"item": 1261, "preference": "Uses meditation apps for relaxation", "recall": ""}
+{"item": 1263, "preference": "Loves craft beer and brewery tours", "recall": ""}
+{"item": 1267, "preference": "Plays tennis regularly", "recall": ""}
+{"item": 1268, "preference": "Decorates home with modern minimalist designs instead of traditional decor", "recall": ""}
+{"item": 1272, "preference": "Enjoys traditional Jewish holiday foods", "recall": ""}
+{"item": 1274, "preference": "Attends local food truck festivals", "recall": ""}
+{"item": 1275, "preference": "Likes attending public lectures", "recall": ""}
+{"item": 1277, "preference": "Follows American football more closely than cricket", "recall": ""}
+{"item": 1279, "preference": "Keeps their wardrobe largely composed of dark monochromes", "recall": ""}
+{"item": 1282, "preference": "Experiments with surrealist sculpture in her art practice", "recall": ""}
+{"item": 1284, "preference": "Keeps a curated collection of European design books", "recall": ""}
+{"item": 1287, "preference": "Follows international Formula 1 racing", "recall": ""}
+{"item": 1288, "preference": "Takes ski holidays in the Swiss Alps", "recall": ""}
+{"item": 1289, "preference": "Regularly visits contemporary art spaces in New York", "recall": ""}
+{"item": 1291, "preference": "Enjoys Islamic art and calligraphy exhibits", "recall": ""}
+{"item": 1292, "preference": "Engages in traditional Javanese ceremonies when possible", "recall": ""}
+{"item": 1293, "preference": "Prefers minimalist black-and-white fashion aesthetics", "recall": ""}
+{"item": 1295, "preference": "Loves watching sunsets over the city", "recall": ""}
+{"item": 1301, "preference": "Enjoys taking scenic drives", "recall": ""}
+{"item": 1303, "preference": "Uses spreadsheets for personal planning", "recall": ""}
+{"item": 1304, "preference": "Enjoys quiet mornings reading the newspaper", "recall": ""}
+{"item": 1309, "preference": "Keeps a dedicated space for tabletop games", "recall": ""}
+{"item": 1316, "preference": "Listens to classical instrumental music", "recall": ""}
+{"item": 1317, "preference": "Goes hunting for venison in season", "recall": ""}
+{"item": 1318, "preference": "Enjoys star-gazing on clear nights", "recall": ""}
+{"item": 1322, "preference": "Values handshake agreements in community dealings", "recall": ""}
+{"item": 1323, "preference": "Enjoys birdwatching in the evenings", "recall": ""}
+{"item": 1327, "preference": "Enjoys attending workshops for skill-building", "recall": ""}
+{"item": 1328, "preference": "Loves Latin-infused food like mofongo and arroz con gandules", "recall": ""}
+{"item": 1331, "preference": "Uses streaming services for movies", "recall": ""}
+{"item": 1333, "preference": "Keeps a small home library of favorite reads", "recall": ""}
+{"item": 1334, "preference": "Follows European football (soccer) instead of the NBA", "recall": ""}
+{"item": 1335, "preference": "Collects paperback novels over oral storytelling circles", "recall": ""}
+{"item": 1336, "preference": "Passionate about hip-hop history documentaries", "recall": ""}
+{"item": 1339, "preference": "Uses formal, academic language in certain contexts", "recall": ""}
+{"item": 1341, "preference": "Keeps a collection of scented candles", "recall": ""}
+{"item": 1347, "preference": "Enjoys photography during travel", "recall": ""}
+{"item": 1348, "preference": "Attends church services regularly", "recall": ""}
+{"item": 1349, "preference": "Uses mobile payment services like M-Pesa for daily transactions", "recall": ""}
+{"item": 1350, "preference": "Enjoys heavy metal concerts", "recall": ""}
+{"item": 1351, "preference": "Enjoys sushi-making classes", "recall": ""}
+{"item": 1354, "preference": "Participates in neighborhood barbecues", "recall": ""}
+{"item": 1355, "preference": "Appreciates fresh flowers in living spaces", "recall": ""}
+{"item": 1358, "preference": "Volunteers in wildlife preservation programs", "recall": ""}
+{"item": 1360, "preference": "Decorates parts of the home with eclectic, mismatched furniture", "recall": ""}
+{"item": 1361, "preference": "Enjoys exploring local history exhibits", "recall": ""}
+{"item": 1362, "preference": "Listens to country music playlists", "recall": ""}
+{"item": 1364, "preference": "Enjoys petting dogs while out walking", "recall": ""}
+{"item": 1370, "preference": "Reads non-fiction on space exploration", "recall": ""}
+{"item": 1373, "preference": "Attends live theatre productions", "recall": ""}
+{"item": 1374, "preference": "Prefers silver jewelry over gold", "recall": ""}
+{"item": 1375, "preference": "Collects modern ceramic art pieces", "recall": ""}
+{"item": 1376, "preference": "Volunteers for local charity events", "recall": ""}
+{"item": 1382, "preference": "Sometimes embraces unstructured daily schedules", "recall": ""}
+{"item": 1385, "preference": "Enjoys tea ceremonies and artisanal teas", "recall": ""}
+{"item": 1387, "preference": "Highly values academic achievement", "recall": ""}
+{"item": 1388, "preference": "Maintains a healthy diet and exercise routine", "recall": ""}
+{"item": 1397, "preference": "Actively debates controversial topics regardless of potential conflict", "recall": ""}
+{"item": 1401, "preference": "Takes photographs of sunsets for personal collection", "recall": ""}
+{"item": 1404, "preference": "Dislikes wearing heavy gold jewelry", "recall": ""}
+{"item": 1405, "preference": "Teaches child to read and write in Hindi", "recall": ""}
+{"item": 1406, "preference": "Is passionate about learning salsa dancing", "recall": ""}
+{"item": 1411, "preference": "Attends stand-up comedy shows", "recall": ""}
+{"item": 1412, "preference": "Cooks vegetarian meals at least a few days a week", "recall": ""}
+{"item": 1413, "preference": "Loves watching the sunrise on weekends", "recall": ""}
+{"item": 1415, "preference": "Uses reusable water bottles daily", "recall": ""}
+{"item": 1418, "preference": "Collects vintage travel posters instead of heritage souvenirs", "recall": ""}
+{"item": 1420, "preference": "Explores historic neighborhoods when visiting new cities", "recall": ""}
+{"item": 1423, "preference": "Bakes homemade bread on weekends", "recall": ""}
+{"item": 1425, "preference": "Watches documentaries on streaming platforms", "recall": ""}
+{"item": 1426, "preference": "Uses recipes passed down from parents and grandparents", "recall": ""}
+{"item": 1427, "preference": "Enjoys exploring museums when traveling", "recall": ""}
+{"item": 1429, "preference": "Participates in local birdwatching groups", "recall": ""}
+{"item": 1433, "preference": "Keeps a small collection of family photo albums", "recall": ""}
+{"item": 1435, "preference": "Has an interest in motorcycle road trips", "recall": ""}
+{"item": 1438, "preference": "Uses a hybrid car for daily commuting", "recall": ""}
+{"item": 1439, "preference": "Enjoys gardening as a weekend pastime", "recall": ""}
+{"item": 1442, "preference": "Participates in online gaming communities", "recall": ""}
+{"item": 1445, "preference": "Participates in charity silent auctions", "recall": ""}
+{"item": 1448, "preference": "Attends art museums more than music festivals", "recall": ""}
+{"item": 1450, "preference": "Enjoys watching sunsets", "recall": ""}
+{"item": 1460, "preference": "Likes exploring thrift and vintage shops", "recall": ""}
+{"item": 1461, "preference": "Uses open-source software regularly", "recall": ""}
+{"item": 1466, "preference": "Speaks at leadership conferences", "recall": ""}
+{"item": 1467, "preference": "Enjoys high-quality coffee from specialty caf\u00e9s", "recall": ""}
+{"item": 1468, "preference": "Collects contemporary sculptures", "recall": ""}
+{"item": 1474, "preference": "Appreciates gourmet wine and cheese pairings", "recall": ""}
+{"item": 1478, "preference": "Loves baking fresh bread on weekends", "recall": ""}
+{"item": 1480, "preference": "Drives an older reliable hatchback", "recall": ""}
+{"item": 1482, "preference": "Occasionally takes budget airline flights for quick travel", "recall": ""}
+{"item": 1483, "preference": "Gets excited about local street food stalls", "recall": ""}
+{"item": 1484, "preference": "Appreciates visiting museums", "recall": ""}
+{"item": 1488, "preference": "Keeps framed family photos around her home", "recall": ""}
+{"item": 1493, "preference": "Dresses in monochrome outfits instead of colorful sports gear for some events", "recall": ""}
+{"item": 1501, "preference": "Follows animal rescue pages online", "recall": ""}
+{"item": 1502, "preference": "Keeps digital backups of important files", "recall": ""}
+{"item": 1505, "preference": "Listens to indie podcasts about tech and start-ups", "recall": ""}
+{"item": 1506, "preference": "Follows ice hockey instead of cricket", "recall": ""}
+{"item": 1508, "preference": "Likes to share books with friends", "recall": ""}
+{"item": 1509, "preference": "Plays casual games on a phone or tablet", "recall": ""}
+{"item": 1516, "preference": "Has a taste for fresh-baked bread", "recall": ""}
+{"item": 1517, "preference": "Likes attending live concerts of favorite artists", "recall": ""}
+{"item": 1525, "preference": "Has an affinity for anime art styles", "recall": ""}
+{"item": 1526, "preference": "Listens to country music playlists", "recall": ""}
+{"item": 1528, "preference": "Likes taking evening walks for relaxation", "recall": ""}
+{"item": 1529, "preference": "Loves stand-up comedy shows", "recall": ""}
+{"item": 1531, "preference": "Enjoys tech podcasts on software development trends", "recall": ""}
+{"item": 1533, "preference": "Spends weekends at outdoor music festivals", "recall": ""}
+{"item": 1536, "preference": "Likes exploring weekend farmers' markets", "recall": ""}
+{"item": 1539, "preference": "Enjoys visiting science and discovery museums", "recall": ""}
+{"item": 1540, "preference": "Interested in environmental activism", "recall": ""}
+{"item": 1543, "preference": "Watches Korean dramas occasionally", "recall": ""}
+{"item": 1550, "preference": "Likes stargazing during summer nights", "recall": ""}
+{"item": 1556, "preference": "Enjoys baking bread at home", "recall": ""}
+{"item": 1557, "preference": "Likes hosting potluck dinners with friends", "recall": ""}
+{"item": 1559, "preference": "Enjoys exploring local bookstores", "recall": ""}
+{"item": 1562, "preference": "Loves horseback riding when traveling", "recall": ""}
+{"item": 1565, "preference": "Likes swimming in outdoor pools during summer", "recall": ""}
+{"item": 1569, "preference": "Attends local community fairs and folk festivals", "recall": ""}
+{"item": 1573, "preference": "Uses productivity tracking apps daily", "recall": ""}
+{"item": 1574, "preference": "Prefers sunny days to rainy days", "recall": ""}
+{"item": 1576, "preference": "Maintains a small bookshelf of favorite novels", "recall": ""}
+{"item": 1577, "preference": "Goes hiking in the nearby mountains", "recall": ""}
+{"item": 1579, "preference": "Enjoys calligraphy demonstrations at events", "recall": ""}
+{"item": 1580, "preference": "Prefers strong espresso over tea in the morning", "recall": ""}
+{"item": 1583, "preference": "Loves attending rock concerts and music festivals", "recall": ""}
+{"item": 1588, "preference": "Favors chocolate desserts over matcha", "recall": ""}
+{"item": 1590, "preference": "Spends generously on experiences rather than saving diligently", "recall": ""}
+{"item": 1592, "preference": "Loves relaxing with a cup of herbal tea", "recall": ""}
+{"item": 1593, "preference": "Thrives in chaotic, rapidly changing environments", "recall": ""}
+{"item": 1594, "preference": "Plays board games with close friends", "recall": ""}
+{"item": 1596, "preference": "Enjoys loud punk rock concerts", "recall": ""}
+{"item": 1597, "preference": "Collects postcards from different countries", "recall": ""}
+{"item": 1601, "preference": "Loves visiting farmers\u2019 markets", "recall": ""}
+{"item": 1604, "preference": "Prefers strongly flavored coffee like caf\u00e9 de olla", "recall": ""}
+{"item": 1608, "preference": "Avoids using Spanish outside formal situations", "recall": ""}
+{"item": 1609, "preference": "Appreciates handwritten letters and stationery", "recall": ""}
+{"item": 1613, "preference": "Enjoys early morning walks in the park", "recall": ""}
+{"item": 1614, "preference": "Plays board games with friends", "recall": ""}
+{"item": 1619, "preference": "Likes visiting art exhibitions occasionally", "recall": ""}
+{"item": 1620, "preference": "Listens to dangdut music at parties", "recall": ""}
+{"item": 1621, "preference": "Enjoys motorcycle rides around town", "recall": ""}
+{"item": 1622, "preference": "Enjoys karaoke with friends", "recall": ""}
+{"item": 1623, "preference": "Enjoys learning Japanese calligraphy", "recall": ""}
+{"item": 1630, "preference": "Prefers documentaries over television dramas", "recall": ""}
+{"item": 1631, "preference": "Enjoys petting cats and dogs", "recall": ""}
+{"item": 1641, "preference": "Watches streaming TV series avidly", "recall": ""}
+{"item": 1642, "preference": "Enjoys amusement park rides", "recall": ""}
+{"item": 1646, "preference": "Attends Diwali celebrations with friends and family", "recall": ""}
+{"item": 1647, "preference": "Loves experimenting with Scandinavian cuisine", "recall": ""}
+{"item": 1649, "preference": "Tries new restaurants in the city", "recall": ""}
+{"item": 1650, "preference": "Avoids gold and invests in cryptocurrencies", "recall": ""}
+{"item": 1652, "preference": "Collects coffee mugs from different places", "recall": ""}
+{"item": 1654, "preference": "Loves riding roller coasters at amusement parks", "recall": ""}
+{"item": 1656, "preference": "Admires bold, eclectic interior design styles", "recall": ""}
+{"item": 1657, "preference": "Enjoys participating in improv classes", "recall": ""}
+{"item": 1658, "preference": "Buys fresh flowers for the home", "recall": ""}
+{"item": 1661, "preference": "Watches Broadway musicals when visiting big cities", "recall": ""}
+{"item": 1665, "preference": "Likes taking evening walks around the neighborhood", "recall": ""}
+{"item": 1666, "preference": "Frequently attends Catholic mass on Sundays", "recall": ""}
+{"item": 1667, "preference": "Enjoys watching documentary series about Scandinavian history", "recall": ""}
+{"item": 1669, "preference": "Invests time into learning Japanese woodworking techniques", "recall": ""}
+{"item": 1671, "preference": "Loves preparing homemade tamales during holidays", "recall": ""}
+{"item": 1672, "preference": "Prefers spicy salsas with most meals", "recall": ""}
+{"item": 1678, "preference": "Follows healthy eating trends like avocado toast and smoothie bowls", "recall": ""}
+{"item": 1680, "preference": "Favors high-rise apartment living over suburban homes", "recall": ""}
+{"item": 1686, "preference": "Is passionate about urban mural art and graffiti tours", "recall": ""}
+{"item": 1687, "preference": "Volunteers for youth skateboarding programs", "recall": ""}
+{"item": 1688, "preference": "Keeps a small indoor herb garden in mismatched pots", "recall": ""}
+{"item": 1692, "preference": "Subscribes to architectural and design magazines", "recall": ""}
+{"item": 1701, "preference": "Enjoys doing digital art for fun", "recall": ""}
+{"item": 1702, "preference": "Enjoys casual cycling around the city", "recall": ""}
+{"item": 1703, "preference": "Maintains some kosher cooking at home", "recall": ""}
+{"item": 1704, "preference": "Speaks multiple languages for cultural connection", "recall": ""}
+{"item": 1706, "preference": "Listens to podcasts during commutes", "recall": ""}
+{"item": 1708, "preference": "Keeps a tidy and organized home", "recall": ""}
+{"item": 1709, "preference": "Likes taking part in local trivia nights with friends", "recall": ""}
+{"item": 1710, "preference": "Keeps a collection of Judaica items", "recall": ""}
+{"item": 1713, "preference": "Prefers drive-in movie theaters in summer", "recall": ""}
+{"item": 1714, "preference": "Enjoys going to county fairs for the food and rides", "recall": ""}
+{"item": 1718, "preference": "Follows American football scores", "recall": ""}
+{"item": 1723, "preference": "Spends free time at theme parks", "recall": ""}
+{"item": 1726, "preference": "Likes going to the local library", "recall": ""}
+{"item": 1734, "preference": "Gardens with alpine plants", "recall": ""}
+{"item": 1735, "preference": "Enjoys walking along the beach", "recall": ""}
+{"item": 1736, "preference": "Likes playing frisbee with kids", "recall": ""}
+{"item": 1737, "preference": "Attends yoga classes regularly", "recall": ""}
+{"item": 1738, "preference": "Plays in a local community ultimate frisbee league", "recall": ""}
+{"item": 1742, "preference": "Regularly drinks black coffee instead of tea", "recall": ""}
+{"item": 1744, "preference": "Enjoys early morning walks in the park", "recall": ""}
+{"item": 1745, "preference": "Uses noise-cancelling headphones at work", "recall": ""}
+{"item": 1747, "preference": "Frequently experiments with Latin American cuisine at home", "recall": ""}
+{"item": 1749, "preference": "Enjoys sci-fi tabletop role-playing games", "recall": ""}
+{"item": 1752, "preference": "Enjoys classical Indian instrumental music for relaxation", "recall": ""}
+{"item": 1753, "preference": "Prefers gold jewelry for special occasions", "recall": ""}
+{"item": 1759, "preference": "Uses spice blends like cumin and cardamom in her cooking", "recall": ""}
+{"item": 1761, "preference": "Avoids overly spicy dishes", "recall": ""}
+{"item": 1762, "preference": "Collects small souvenir magnets from travels", "recall": ""}
+{"item": 1763, "preference": "Wears modern casual attire most days, even when meeting customers", "recall": ""}
+{"item": 1765, "preference": "Often shops at traditional wet markets for fresh produce", "recall": ""}
+{"item": 1766, "preference": "Enjoys walking in quiet neighborhoods", "recall": ""}
+{"item": 1773, "preference": "Listens to science and tech podcasts", "recall": ""}
+{"item": 1775, "preference": "Enjoys celebrating birthdays", "recall": ""}
+{"item": 1778, "preference": "Collects modern art prints for his home office", "recall": ""}
+{"item": 1780, "preference": "Attends live theater performances occasionally", "recall": ""}
+{"item": 1783, "preference": "Keeps a vegetable garden", "recall": ""}
+{"item": 1784, "preference": "Enjoys outdoor activities like camping", "recall": ""}
+{"item": 1787, "preference": "Keeps a stash of greeting cards at home", "recall": ""}
+{"item": 1790, "preference": "Likes cooking hearty Slovak comfort food at home", "recall": ""}
+{"item": 1791, "preference": "Enjoys repairing vintage bicycles", "recall": ""}
+{"item": 1796, "preference": "Keeps indoor plants for air freshness", "recall": ""}
+{"item": 1797, "preference": "Favors fresh tropical fruits like mango and papaya", "recall": ""}
+{"item": 1798, "preference": "Shops for groceries in modern supermarket chains", "recall": ""}
+{"item": 1802, "preference": "Prefers gray and navy tones for interior decor", "recall": ""}
+{"item": 1805, "preference": "Participates in church volunteer activities", "recall": ""}
+{"item": 1809, "preference": "Follows Latin pop artists on social media", "recall": ""}
+{"item": 1812, "preference": "Loves eating homemade tamales at Christmas", "recall": ""}
+{"item": 1820, "preference": "Enjoys exploring street art in different neighborhoods", "recall": ""}
+{"item": 1828, "preference": "\u504f\u597d\u4f7f\u7528\u7eb8\u8d28\u7b14\u8bb0\u672c\u8bb0\u4e8b", "recall": ""}
+{"item": 1830, "preference": "\u6709\u65f6\u5019\u4f1a\u7528\u9999\u85b0\u8721\u70db\u653e\u677e", "recall": ""}
+{"item": 1831, "preference": "\u4f1a\u4f7f\u7528\u884c\u5c71\u6756\u8fdb\u884c\u957f\u9014\u5f92\u6b65", "recall": ""}
+{"item": 1835, "preference": "\u559c\u6b22\u642d\u4e58\u516c\u5171\u4ea4\u901a\u51fa\u884c", "recall": ""}
+{"item": 1836, "preference": "Goes to the gym three times a week", "recall": ""}
+{"item": 1843, "preference": "Prefers baseball over cricket when watching sports", "recall": ""}
+{"item": 1845, "preference": "Watches science documentaries", "recall": ""}
+{"item": 1846, "preference": "Values community gatherings with other Indians abroad", "recall": ""}
+{"item": 1848, "preference": "Keeps potted plants at home", "recall": ""}
+{"item": 1849, "preference": "Enjoys drinking green tea in the mornings", "recall": ""}
+{"item": 1851, "preference": "Plays board games with family on weekends", "recall": ""}
+{"item": 1856, "preference": "Keeps indoor plants for air purification", "recall": ""}
+{"item": 1857, "preference": "Is fascinated by street art and graffiti culture", "recall": ""}
+{"item": 1858, "preference": "Likes solving crossword puzzles", "recall": ""}
+{"item": 1860, "preference": "Uses wearable tech for fitness tracking regularly", "recall": ""}
+{"item": 1864, "preference": "Loves attending live theater performances", "recall": ""}
+{"item": 1865, "preference": "Keeps a personal journal", "recall": ""}
+{"item": 1866, "preference": "Uses a second-hand Indonesian smartphone brand", "recall": ""}
+{"item": 1868, "preference": "Takes off shoes before entering the home", "recall": ""}
+{"item": 1873, "preference": "Buys products for function rather than packaging", "recall": ""}
+{"item": 1877, "preference": "Loves dark chocolate desserts over sweet bean-based treats", "recall": ""}
+{"item": 1879, "preference": "Enjoys photography as a creative outlet", "recall": ""}
+{"item": 1883, "preference": "Enjoys cooking traditional Taiwanese dishes", "recall": ""}
+{"item": 1889, "preference": "Enjoys learning new recipes from friends", "recall": ""}
+{"item": 1893, "preference": "Enjoys cold brew coffee in summer", "recall": ""}
+{"item": 1896, "preference": "Keeps up with space exploration news", "recall": ""}
+{"item": 1898, "preference": "Favors handwritten thank-you notes", "recall": ""}
+{"item": 1901, "preference": "Goes on bike rides along scenic routes", "recall": ""}
+{"item": 1903, "preference": "Likes swimming for exercise", "recall": ""}
+{"item": 1907, "preference": "Enjoys experimenting with BBQ and smoked meats", "recall": ""}
+{"item": 1909, "preference": "Follows major sports events involving her state teams", "recall": ""}
+{"item": 1911, "preference": "Enjoys coastal vacations in the summer", "recall": ""}
+{"item": 1912, "preference": "Enjoys watching sunsets", "recall": ""}
+{"item": 1914, "preference": "Collects vintage science-fiction memorabilia", "recall": ""}
+{"item": 1917, "preference": "Takes photographs of nature scenes", "recall": ""}
+{"item": 1918, "preference": "Enjoys baking bread from scratch", "recall": ""}
+{"item": 1922, "preference": "Enjoys Indian wedding celebrations", "recall": ""}
+{"item": 1923, "preference": "Enjoys swimming for fitness", "recall": ""}
+{"item": 1926, "preference": "Uses more olive oil than ghee for cooking", "recall": ""}
+{"item": 1929, "preference": "Often experiments with Latin American cuisine", "recall": ""}
+{"item": 1932, "preference": "Has an interest in space exploration", "recall": ""}
+{"item": 1934, "preference": "Collects vintage vinyl records from the 1980s", "recall": ""}
+{"item": 1936, "preference": "Values multilingual communication", "recall": ""}
+{"item": 1942, "preference": "Prefers science fiction novels over romantic poetry", "recall": ""}
+{"item": 1945, "preference": "Writes postcards to friends when abroad", "recall": ""}
+{"item": 1949, "preference": "Keeps pet fish rather than common household pets like cats or dogs", "recall": ""}
+{"item": 1950, "preference": "Favors cycling trips over driving for short distances", "recall": ""}
+{"item": 1952, "preference": "Takes an active interest in Jewish holidays and cultural festivals", "recall": ""}
+{"item": 1953, "preference": "Passionate about climate change activism", "recall": ""}
+{"item": 1956, "preference": "Supports sports clubs for recreation instead of cultural societies", "recall": ""}
+{"item": 1958, "preference": "Uses Apple products for work and personal life", "recall": ""}
+{"item": 1961, "preference": "Uses protein shakes after workouts", "recall": ""}
+{"item": 1964, "preference": "Often wears sunglasses with reflective lenses", "recall": ""}
+{"item": 1965, "preference": "Drives a hybrid sedan for environmental reasons", "recall": ""}
+{"item": 1967, "preference": "Likes walking outdoors to clear the mind", "recall": ""}
+{"item": 1973, "preference": "Decorates home with minimalist and tasteful furnishings", "recall": ""}
+{"item": 1975, "preference": "Keeps a playful collection of novelty mugs at home", "recall": ""}
+{"item": 1976, "preference": "Enjoys mild hiking trails with friends", "recall": ""}
+{"item": 1980, "preference": "Reads mystery novels on rainy days", "recall": ""}
+{"item": 1983, "preference": "Values respect for elders", "recall": ""}
+{"item": 1985, "preference": "Appreciates quality headphones", "recall": ""}
+{"item": 1987, "preference": "Supports Ghanaian national music competitions", "recall": ""}
+{"item": 1991, "preference": "Likes watching Ghanaian and Nigerian films", "recall": ""}
+{"item": 1994, "preference": "Follows cricket more than football", "recall": ""}
+{"item": 1995, "preference": "Prefers email communication over casual drop-ins", "recall": ""}
+{"item": 1997, "preference": "Listens to podcasts on diverse topics", "recall": ""}
+{"item": 1999, "preference": "Prefers coffee over tea for a morning boost", "recall": ""}
+{"item": 2002, "preference": "Watches theatre plays occasionally", "recall": ""}
+{"item": 2005, "preference": "Tends to maintain close relationships with extended family members", "recall": ""}
+{"item": 2006, "preference": "Reads Scandinavian crime thrillers", "recall": ""}
+{"item": 2007, "preference": "Follows contemporary Russian literature closely", "recall": ""}
+{"item": 2009, "preference": "Values respect for elders and authority", "recall": ""}
+{"item": 2011, "preference": "Prefers in-person conversations over digital messaging", "recall": ""}
+{"item": 2015, "preference": "Enjoys photography as a hobby", "recall": ""}

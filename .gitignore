@@ -28,3 +28,8 @@ cache/
 runs/literary_taste/profiles.csv
 runs/literary_taste/joint_*/judgments.csv
 runs/literary_taste/joint_*/rows_*.csv
+
+# Study 4: regenerate with src/implicit/build_items.py
+runs/implicit/items.jsonl
+runs/implicit/personamem_v2_benchmark.csv
+runs/implicit/*/MC_lens.npy

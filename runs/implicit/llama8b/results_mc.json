@@ -1,0 +1,155 @@
+{
+ "model": "meta-llama/Llama-3.1-8B-Instruct",
+ "n_items": 800,
+ "n_personas": 195,
+ "accuracy": {
+  "none": 0.2725,
+  "explicit": 0.9625,
+  "implicit": 0.735,
+  "explicit_far": 0.96,
+  "implicit_far": 0.5988
+ },
+ "gaps": {
+  "explicit-implicit": {
+   "delta": 0.2275,
+   "ci": [
+    0.1967,
+    0.26
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  "explicit-none": {
+   "delta": 0.69,
+   "ci": [
+    0.6566,
+    0.7227
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  "implicit-none": {
+   "delta": 0.4625,
+   "ci": [
+    0.4248,
+    0.4987
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  "explicit-explicit_far": {
+   "delta": 0.0025,
+   "ci": [
+    -0.0061,
+    0.0104
+   ],
+   "p": 0.678,
+   "sig": false
+  },
+  "implicit-implicit_far": {
+   "delta": 0.1362,
+   "ci": [
+    0.1095,
+    0.1652
+   ],
+   "p": 0.0005,
+   "sig": true
+  }
+ },
+ "vs_embedding": {
+  "explicit": {
+   "llm": 0.9625,
+   "embed": 0.87,
+   "llm_minus_embed": {
+    "delta": 0.0925,
+    "ci": [
+     0.0669,
+     0.1175
+    ],
+    "p": 0.0005,
+    "sig": true
+   },
+   "n_embed_wrong": 104,
+   "llm_on_embed_wrong": 0.7981,
+   "llm_on_embed_right": 0.9871
+  },
+  "implicit": {
+   "llm": 0.735,
+   "embed": 0.5437,
+   "llm_minus_embed": {
+    "delta": 0.1913,
+    "ci": [
+     0.1493,
+     0.2339
+    ],
+    "p": 0.0005,
+    "sig": true
+   },
+   "n_embed_wrong": 365,
+   "llm_on_embed_wrong": 0.6548,
+   "llm_on_embed_right": 0.8023
+  },
+  "explicit_far": {
+   "llm": 0.96,
+   "embed": 0.4975,
+   "llm_minus_embed": {
+    "delta": 0.4625,
+    "ci": [
+     0.4244,
+     0.4975
+    ],
+    "p": 0.0005,
+    "sig": true
+   },
+   "n_embed_wrong": 402,
+   "llm_on_embed_wrong": 0.9478,
+   "llm_on_embed_right": 0.9724
+  },
+  "implicit_far": {
+   "llm": 0.5988,
+   "embed": 0.4462,
+   "llm_minus_embed": {
+    "delta": 0.1525,
+    "ci": [
+     0.108,
+     0.1983
+    ],
+    "p": 0.0005,
+    "sig": true
+   },
+   "n_embed_wrong": 443,
+   "llm_on_embed_wrong": 0.5463,
+   "llm_on_embed_right": 0.6639
+  }
+ },
+ "overlap_split": {
+  "explicit": {
+   "hi": 0.9682,
+   "lo": 0.9543
+  },
+  "implicit": {
+   "hi": 0.7691,
+   "lo": 0.686
+  }
+ },
+ "by_pref_type": {
+  "anti_stereotypical_pref": {
+   "none": 0.2704,
+   "explicit": 0.9707,
+   "implicit": 0.7068,
+   "n": 307
+  },
+  "neutral_preferences": {
+   "none": 0.2567,
+   "explicit": 0.9433,
+   "implicit": 0.72,
+   "n": 300
+  },
+  "stereotypical_pref": {
+   "none": 0.3005,
+   "explicit": 0.9793,
+   "implicit": 0.8031,
+   "n": 193
+  }
+ }
+}

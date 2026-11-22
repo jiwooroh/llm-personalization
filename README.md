@@ -176,7 +176,22 @@ LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 
    다만 knows는 공유 취향 수준(0.64, Study 2 population 0.62–0.65)이고, 프로필이 더하는 것은 없다.
 4. "I don't care about…" 문장을 빼도 차이 없음.
 
-## 5. 한계
+## 5. Study 4 — 명시 vs 암묵 선호: 대화 속에 은근히 드러난 선호를 쓰나
+
+PersonaMem-v2 (2025) 800문항, persona 195명. 같은 질문·답변 4개에 앞선 대화만 바꾼다: 선호를 직접 말함(explicit) / 대화에서 은근히 드러냄(implicit) / 각각 + 무관한 대화 2턴(_far). 4지선다 정답률(우연 0.25), 기준선은 mpnet 임베딩 유사도. 분석: `notebooks/04_study4_implicit.ipynb`, 계획·피벗 기록: `docs/study4_plan.md`.
+
+| | none | explicit | implicit | explicit_far | implicit_far |
+|---|---|---|---|---|---|
+| Qwen2.5-7B | 0.23 | 0.92 | 0.51 | 0.83 | 0.41 |
+| Llama-3.1-8B | 0.27 | 0.96 | 0.74 | 0.96 | 0.60 |
+| 임베딩 | — | 0.87 | 0.54 | 0.50 | 0.45 |
+
+1. 명시 선호는 모두 반영한다. 암묵 선호와의 격차는 Qwen +0.40, Llama +0.23 (둘 다 유의).
+2. Qwen은 암묵 조건에서 임베딩과 차이가 없다(−0.03, n.s.). Llama는 +0.19이고 임베딩이 틀리는 문항에서도 0.65.
+3. 무관한 대화가 끼면 암묵 선호가 더 많이 사라진다 (−0.11~−0.14, 명시는 0.00~−0.09).
+4. 암묵 조건에서 stereotypical 선호가 anti-stereotypical보다 약 0.09 높다.
+
+## 6. 한계
 
 - PRISM `stated_prefs`는 잡음 있는 자기보고라 상한이 낮고, 사람 독자 기준선이 없다.
 - probe 입력 차원(3,584)이 크다. 768차원 문장 임베딩과의 비교로 일부 반박.
@@ -186,25 +201,28 @@ LiteraryTaste 설문을 1인칭 취향 문장(평균 88단어)으로 바꿔 글 
 - LiteraryTaste의 글 표현은 작은 모델(MiniLM, Qwen-0.5B)의 평균 풀링이다.
 - Study 3 프로필은 설문 숫자를 템플릿으로 옮긴 문장이지 독자가 직접 쓴 글이 아니다.
 
-## 6. 레포 구조
+## 7. 레포 구조
 
 ```
 llm-personalization/
-├── README.md · run_all.sh · gpu_session.sh · requirements.txt
+├── README.md · run_all.sh · gpu_session.sh · gpu_session_study4.sh · requirements.txt
 ├── src/
 │   ├── common.py · extract_acts.py · probe.py · verbal_extract.py   Study 1 (GPU)
 │   ├── verbal_calibrated.py · user_bootstrap.py · minimal_pairs.py · make_figures.py
-│   └── literary/  embed_texts.py · stated_vs_revealed.py           Study 2 (CPU)
-│                  make_profiles.py · extract_joint.py · probe_joint.py   Study 3
-├── notebooks/03_prism_intent.ipynb
+│   ├── literary/  embed_texts.py · stated_vs_revealed.py           Study 2 (CPU)
+│   │              make_profiles.py · extract_joint.py · probe_joint.py   Study 3
+│   └── implicit/  build_items.py · embed_baseline.py · extract.py · analyze_mc.py   Study 4
+├── notebooks/03_prism_intent.ipynb · 04_study4_implicit.ipynb
+├── docs/study4_plan.md · figures/
 ├── runs/
 │   ├── qwen7b/ · llama8b/      Study 1 결과 (csv·json·figures만 git, *.npy/*.parquet 제외)
 │   ├── qwen05b/                Study 1 파이프라인 검증 (Mac, Qwen-0.5B)
+│   ├── implicit/               Study 4 결과 (qwen7b/ · llama8b/ · pilot15/)
 │   └── literary_taste/         Study 2 결과 (svr_*/), Study 3 결과 (joint_qwen7b/ 요약만)
 └── data/ · LiteraryTaste/      내려받는 데이터 (git 제외)
 ```
 
-## 7. 실행 방법
+## 8. 실행 방법
 
 ```bash
 git clone <this repo> && cd llm-personalization
@@ -243,7 +261,7 @@ python stated_vs_revealed.py --emb minilm
 python stated_vs_revealed.py --emb Qwen2.5-0.5B-Instruct --layer 12 --with_length
 ```
 
-## 8. 진행 상황
+## 9. 진행 상황
 
 - 2026-11-20: Qwen2.5-7B로 PRISM 1,500명 실행, 말 점수 보정 비교.
 - 2026-11-21: bootstrap, 사람별 오차 분석, PRISM 대화 평점 연결(비유의), LiteraryTaste stated vs revealed 실험.

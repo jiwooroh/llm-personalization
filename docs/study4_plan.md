@@ -139,3 +139,22 @@ PYTHONUNBUFFERED=1 bash gpu_session_study4.sh 2>&1 | tee study4.log
 3. which implicit preferences are lost: by distance, preference type, lexical overlap
 
 Dropped: probe, logit lens, attribution / recall conditions, steering.
+
+## Results (2026-11-22, 800 items, 195 personas, MC accuracy, chance 0.25)
+
+| | none | explicit | implicit | explicit_far | implicit_far |
+|---|---|---|---|---|---|
+| Qwen2.5-7B | 0.23 | 0.92 | 0.51 | 0.83 | 0.41 |
+| Llama-3.1-8B | 0.27 | 0.96 | 0.74 | 0.96 | 0.60 |
+| embedding (mpnet) | — | 0.87 | 0.54 | 0.50 | 0.45 |
+
+- Explicit − implicit: Qwen +0.40 [0.37, 0.44], Llama +0.23 [0.20, 0.26].
+- vs embedding on implicit: Qwen −0.03 [−0.08, 0.02] (no better than similarity); Llama +0.19 [0.15, 0.23]. On items the embedding gets wrong: Qwen 0.46, Llama 0.65.
+- Distance: implicit drops 0.11–0.14 with two filler exchanges; explicit drops 0.09 (Qwen) and 0.00 (Llama).
+- Pref type (implicit): stereotypical > anti-stereotypical in both (Qwen 0.56 vs 0.47, Llama 0.80 vs 0.71).
+- Lexical overlap: small effect (implicit hi vs lo +0.05 / +0.08).
+
+## Follow-ups (2026-11-22)
+
+- **Error analysis** (`docs/study4_error_analysis.md`): Llama wins where a concrete cue is buried inside an editing/translation task (the embedding fails there, Llama does not). Qwen loses to the embedding even on direct, lexically obvious cues, so its problem is not subtlety but not treating conversation content as information about the user. Stereotypical > anti-stereotypical is not significant once no-context accuracy is subtracted; it shows up only on items with no surface cue (small n).
+- **Study 4b, scale sweep** (`gpu_session_study4_scale.sh`, 48GB GPU, ~1.5h): Qwen 1.5B/3B/14B and Llama-3.2 1B/3B, same items and conditions. If Qwen-14B stays near the embedding while small Llamas beat it, the difference is family (training), not size. Notebook section 7 plots it once results are in `runs/implicit/`.
