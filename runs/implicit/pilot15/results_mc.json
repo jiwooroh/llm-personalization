@@ -1,0 +1,105 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_items": 40,
+ "n_personas": 10,
+ "accuracy": {
+  "none": 0.275,
+  "explicit": 0.825,
+  "implicit": 0.55,
+  "implicit_attr": 0.575,
+  "implicit_recall": 0.575
+ },
+ "gaps": {
+  "explicit-implicit": {
+   "delta": 0.275,
+   "ci": [
+    0.1578,
+    0.3696
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  "explicit-none": {
+   "delta": 0.55,
+   "ci": [
+    0.3846,
+    0.6889
+   ],
+   "p": 0.0005,
+   "sig": true
+  },
+  "implicit-none": {
+   "delta": 0.275,
+   "ci": [
+    0.1785,
+    0.3721
+   ],
+   "p": 0.0005,
+   "sig": true
+  }
+ },
+ "vs_embedding": {
+  "explicit": {
+   "llm": 0.825,
+   "embed": 0.9,
+   "llm_minus_embed": {
+    "delta": -0.075,
+    "ci": [
+     -0.2308,
+     0.0541
+    ],
+    "p": 0.396,
+    "sig": false
+   },
+   "n_embed_wrong": 4,
+   "llm_on_embed_wrong": 0.75,
+   "llm_on_embed_right": 0.8333
+  },
+  "implicit": {
+   "llm": 0.55,
+   "embed": 0.725,
+   "llm_minus_embed": {
+    "delta": -0.175,
+    "ci": [
+     -0.359,
+     0.0345
+    ],
+    "p": 0.14,
+    "sig": false
+   },
+   "n_embed_wrong": 11,
+   "llm_on_embed_wrong": 0.4545,
+   "llm_on_embed_right": 0.5862
+  }
+ },
+ "overlap_split": {
+  "explicit": {
+   "hi": 0.75,
+   "lo": 0.9
+  },
+  "implicit": {
+   "hi": 0.6,
+   "lo": 0.5
+  }
+ },
+ "by_pref_type": {
+  "anti_stereotypical_pref": {
+   "none": 0.2632,
+   "explicit": 0.7895,
+   "implicit": 0.5263,
+   "n": 19
+  },
+  "neutral_preferences": {
+   "none": 0.25,
+   "explicit": 0.75,
+   "implicit": 0.4167,
+   "n": 12
+  },
+  "stereotypical_pref": {
+   "none": 0.3333,
+   "explicit": 1.0,
+   "implicit": 0.7778,
+   "n": 9
+  }
+ }
+}
